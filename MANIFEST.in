@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include durar_masagh_company *.css
+recursive-include durar_masagh_company *.csv
+recursive-include durar_masagh_company *.html
+recursive-include durar_masagh_company *.ico
+recursive-include durar_masagh_company *.js
+recursive-include durar_masagh_company *.json
+recursive-include durar_masagh_company *.md
+recursive-include durar_masagh_company *.png
+recursive-include durar_masagh_company *.py
+recursive-include durar_masagh_company *.svg
+recursive-include durar_masagh_company *.txt
+recursive-exclude durar_masagh_company *.pyc
