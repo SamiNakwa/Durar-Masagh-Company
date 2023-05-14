@@ -1,0 +1,164 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:VMS-{YYYY}-{MM}-{DD}-{####}",
+ "creation": "2023-05-14 12:34:47.995003",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle",
+  "employee",
+  "status",
+  "column_break_9hvsd",
+  "supplier",
+  "date",
+  "supplier_details_section",
+  "address",
+  "column_break_pek0x",
+  "email",
+  "mobile",
+  "maintenance_details_section_section",
+  "maintenance_details",
+  "amount_details_section",
+  "total_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle",
+   "options": "Vehicle",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "vehicle.employee",
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_9hvsd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "maintenance_details_section_section",
+   "fieldtype": "Section Break",
+   "label": "Maintenance Details Section"
+  },
+  {
+   "fieldname": "maintenance_details",
+   "fieldtype": "Table",
+   "label": "Maintenance Details",
+   "options": "Vehicle Maintenance Details"
+  },
+  {
+   "fieldname": "amount_details_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "<b style=\"color: red;\">Total Amount<b></b></b>",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplier_details_section",
+   "fieldtype": "Section Break",
+   "label": "Supplier Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_pek0x",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "supplier.primary_address",
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "supplier.email_id",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "supplier.mobile_no",
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "default": "Scheduled",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Scheduled\nIn Maintenance\nCompleted\nCanceled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vehicle Maintenance Schedule",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-05-14 14:48:02.724118",
+ "modified_by": "Administrator",
+ "module": "Durar Masagh Company",
+ "name": "Vehicle Maintenance Schedule",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

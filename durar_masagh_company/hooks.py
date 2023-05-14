@@ -188,3 +188,22 @@ user_data_fields = [
 #	"durar_masagh_company.auth.validate"
 # ]
 
+
+fixtures = [
+    {"dt": "Workflow", "filters": [
+        [
+            "name", "in", [
+                "Vehicle Maintenance Schedule",
+            ]
+        ]
+    ]},
+    {"dt": "Role", "filters": [
+        [
+            "name", "in", [
+                "Fleet User",
+            ]
+        ]
+    ]},
+    "Workflow State",
+    "Workflow Action Master",
+]
