@@ -204,6 +204,13 @@ fixtures = [
             ]
         ]
     ]},
+    {"dt": "Workspace", "filters": [
+        [
+            "name", "in", [
+                "HR",
+            ]
+        ]
+    ]},
     "Workflow State",
     "Workflow Action Master",
 ]
