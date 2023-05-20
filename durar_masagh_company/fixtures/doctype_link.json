@@ -1,0 +1,19 @@
+[
+ {
+  "custom": 1,
+  "docstatus": 0,
+  "doctype": "DocType Link",
+  "group": null,
+  "hidden": 0,
+  "is_child_table": 0,
+  "link_doctype": "Vehicle Maintenance Schedule",
+  "link_fieldname": "vehicle",
+  "modified": "2023-05-20 09:38:01.583331",
+  "name": "4aab2c3b5f",
+  "parent": "Vehicle",
+  "parent_doctype": null,
+  "parentfield": "links",
+  "parenttype": "Customize Form",
+  "table_fieldname": null
+ }
+]
