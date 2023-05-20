@@ -211,6 +211,13 @@ fixtures = [
             ]
         ]
     ]},
+    {"dt": "DocType Link", "filters": [
+        [
+            "parenttype", "in", [
+                "Customize Form",
+            ]
+        ]
+    ]},
     "Workflow State",
     "Workflow Action Master",
 ]
