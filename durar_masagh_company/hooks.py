@@ -218,6 +218,13 @@ fixtures = [
             ]
         ]
     ]},
+    {"dt": "Custom Field", "filters": [
+        [
+            "dt", "in", [
+                "Delivery Trip",
+            ]
+        ]
+    ]},
     "Workflow State",
     "Workflow Action Master",
 ]
