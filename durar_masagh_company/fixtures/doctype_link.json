@@ -8,7 +8,7 @@
   "is_child_table": 0,
   "link_doctype": "Vehicle Maintenance Schedule",
   "link_fieldname": "vehicle",
-  "modified": "2023-05-20 09:38:01.583331",
+  "modified": "2023-05-28 18:01:01.509731",
   "name": "4aab2c3b5f",
   "parent": "Vehicle",
   "parent_doctype": null,

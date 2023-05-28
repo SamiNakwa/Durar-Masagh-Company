@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-05-28 20:25:10.632788",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "arabitra_section",
+  "arabitra_url",
+  "arabitra_method"
+ ],
+ "fields": [
+  {
+   "fieldname": "arabitra_section",
+   "fieldtype": "Section Break",
+   "label": "Arabitra"
+  },
+  {
+   "fieldname": "arabitra_url",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "URL",
+   "reqd": 1
+  },
+  {
+   "fieldname": "arabitra_method",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Method",
+   "options": "\nGET\nPOST",
+   "read_only_depends_on": "eval:Boolean(doc.arabitra_method)",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-05-28 20:31:02.241480",
+ "modified_by": "Administrator",
+ "module": "Durar Masagh Company",
+ "name": "Fleet Management API",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

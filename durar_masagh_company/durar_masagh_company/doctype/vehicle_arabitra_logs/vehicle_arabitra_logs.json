@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2023-05-28 20:59:46.005321",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle",
+  "latitude",
+  "longitude",
+  "track_date_time",
+  "column_break_zsvkh",
+  "location",
+  "ignition",
+  "distance",
+  "expiry_date",
+  "weight"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Data",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Data",
+   "label": "Longitude"
+  },
+  {
+   "fieldname": "track_date_time",
+   "fieldtype": "Datetime",
+   "label": "Track Date Time"
+  },
+  {
+   "fieldname": "column_break_zsvkh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Small Text",
+   "label": "Location"
+  },
+  {
+   "default": "0",
+   "fieldname": "ignition",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Ignition"
+  },
+  {
+   "fieldname": "distance",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Distance"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Int",
+   "label": "Weight"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-05-28 21:56:32.271720",
+ "modified_by": "Administrator",
+ "module": "Durar Masagh Company",
+ "name": "Vehicle Arabitra Logs",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

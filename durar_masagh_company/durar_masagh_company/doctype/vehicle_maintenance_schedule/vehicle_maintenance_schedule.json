@@ -18,6 +18,13 @@
   "column_break_pek0x",
   "email",
   "mobile",
+  "regulatory_compliance_section",
+  "carbon_check",
+  "vehicle_passing",
+  "column_break_a1kna",
+  "insurance_renewal",
+  "start_date",
+  "end_date",
   "maintenance_details_section_section",
   "maintenance_details",
   "amount_details_section",
@@ -62,6 +69,7 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval:Boolean(doc.vehicle)",
    "fieldname": "maintenance_details_section_section",
    "fieldtype": "Section Break",
    "label": "Maintenance Details Section"
@@ -125,6 +133,30 @@
    "read_only": 1
   },
   {
+   "depends_on": "eval:Boolean(doc.vehicle)",
+   "fieldname": "regulatory_compliance_section",
+   "fieldtype": "Section Break",
+   "label": "Regulatory compliance "
+  },
+  {
+   "default": "0",
+   "fieldname": "carbon_check",
+   "fieldtype": "Check",
+   "label": "Carbon Check"
+  },
+  {
+   "default": "0",
+   "fieldname": "insurance_renewal",
+   "fieldtype": "Check",
+   "label": "Insurance Renewal"
+  },
+  {
+   "default": "0",
+   "fieldname": "vehicle_passing",
+   "fieldtype": "Check",
+   "label": "Vehicle Passing"
+  },
+  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -132,12 +164,28 @@
    "options": "Vehicle Maintenance Schedule",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_a1kna",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:Boolean(doc.insurance_renewal)",
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "depends_on": "eval:Boolean(doc.insurance_renewal)",
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-14 14:48:02.724118",
+ "modified": "2023-05-28 18:20:27.494172",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Vehicle Maintenance Schedule",

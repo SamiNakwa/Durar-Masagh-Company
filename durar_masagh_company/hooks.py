@@ -106,23 +106,23 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-#	"all": [
-#		"durar_masagh_company.tasks.all"
-#	],
-#	"daily": [
-#		"durar_masagh_company.tasks.daily"
-#	],
-#	"hourly": [
-#		"durar_masagh_company.tasks.hourly"
-#	],
-#	"weekly": [
-#		"durar_masagh_company.tasks.weekly"
-#	]
-#	"monthly": [
-#		"durar_masagh_company.tasks.monthly"
-#	]
-# }
+scheduler_events = {
+	# "all": [
+	# 	"durar_masagh_company.tasks.all"
+	# ],
+	"daily": [
+		"durar_masagh_company.durar_masagh_company.schedule_job.vehicle.regulatory_compliance_checking"
+	],
+	# "hourly": [
+	# 	"durar_masagh_company.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"durar_masagh_company.tasks.weekly"
+	# ]
+	# "monthly": [
+	# 	"durar_masagh_company.tasks.monthly"
+	# ]
+}
 
 # Testing
 # -------
@@ -222,9 +222,11 @@ fixtures = [
         [
             "dt", "in", [
                 "Delivery Trip",
+                "Vehicle",
             ]
         ]
     ]},
     "Workflow State",
     "Workflow Action Master",
+    "Email Template"
 ]
