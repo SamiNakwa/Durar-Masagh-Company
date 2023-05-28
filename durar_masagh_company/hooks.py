@@ -223,6 +223,7 @@ fixtures = [
             "dt", "in", [
                 "Delivery Trip",
                 "Vehicle",
+                "Vehicle Log",
             ]
         ]
     ]},
