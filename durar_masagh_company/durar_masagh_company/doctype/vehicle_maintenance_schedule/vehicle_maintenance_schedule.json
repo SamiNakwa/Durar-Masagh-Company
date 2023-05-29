@@ -28,8 +28,7 @@
   "maintenance_details_section_section",
   "maintenance_details",
   "amount_details_section",
-  "total_amount",
-  "amended_from"
+  "total_amount"
  ],
  "fields": [
   {
@@ -157,15 +156,6 @@
    "label": "Vehicle Passing"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Vehicle Maintenance Schedule",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
    "fieldname": "column_break_a1kna",
    "fieldtype": "Column Break"
   },
@@ -185,7 +175,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-28 18:20:27.494172",
+ "modified": "2023-05-29 04:40:01.352916",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Vehicle Maintenance Schedule",

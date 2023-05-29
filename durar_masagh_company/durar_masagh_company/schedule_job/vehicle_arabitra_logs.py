@@ -8,7 +8,7 @@ def get_arabitra_data():
 
     if response.status_code == 200:
         vehicle_data = response.json().get('data')
-        create_vehicle(vehicle_data)
+        # create_vehicle(vehicle_data)
         for data in vehicle_data:
             new_doc = frappe.new_doc("Vehicle Arabitra Logs")
             new_doc.vehicle = data.get('vehicleNo')

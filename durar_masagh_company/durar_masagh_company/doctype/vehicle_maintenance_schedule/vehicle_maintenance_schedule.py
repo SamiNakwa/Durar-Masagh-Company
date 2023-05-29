@@ -11,14 +11,20 @@ from durar_masagh_company.durar_masagh_company.schedule_job.vehicle_arabitra_log
 class VehicleMaintenanceSchedule(Document):
 
 	def before_save(self):
-		get_arabitra_data()
+		# get_arabitra_data()
+		pass
+
+	def before_submit(self):
+		c = 1
 
 	def submit(self):
+		if self.docstatus == 0:
+			self.docstatus = 1
 		self.insurance_date_checking()
 
 		if self.carbon_check or self.vehicle_passing or self.insurance_renewal:
 			self.update_vehicle_regulatory_data()
-		# self.save()
+		self.save()
 
 	def insurance_date_checking(self):
 		if self.insurance_renewal:

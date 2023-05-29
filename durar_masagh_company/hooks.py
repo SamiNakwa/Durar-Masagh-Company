@@ -31,7 +31,9 @@ app_license = "MIT"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+        "Vehicle" : "public/js/vehicle.js",
+    }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -87,9 +89,9 @@ app_license = "MIT"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-#	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Vehicle": "durar_masagh_company.overrides.vehicle.CustomVehicle"
+}
 
 # Document Events
 # ---------------
@@ -122,6 +124,11 @@ scheduler_events = {
 	# "monthly": [
 	# 	"durar_masagh_company.tasks.monthly"
 	# ]
+    "cron": {
+        "*/20 8-21 * * *": [
+            "durar_masagh_company.durar_masagh_company.schedule_job.vehicle_arabitra_logs.get_arabitra_data"
+        ]
+    },
 }
 
 # Testing
@@ -224,10 +231,12 @@ fixtures = [
                 "Delivery Trip",
                 "Vehicle",
                 "Vehicle Log",
+                "Location"
             ]
         ]
     ]},
     "Workflow State",
     "Workflow Action Master",
-    "Email Template"
+    "Email Template",
+    "Custom DocPerm"
 ]
