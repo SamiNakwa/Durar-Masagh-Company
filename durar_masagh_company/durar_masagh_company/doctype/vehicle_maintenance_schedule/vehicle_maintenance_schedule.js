@@ -13,9 +13,9 @@ frappe.ui.form.on('Vehicle Maintenance Schedule', {
 		}
 
 		// send inital mail
-		if (frm.doc.__islocal){
-			frm.call('vehicle_maintenance_notifcation')
-		}
+		// if (frm.doc.__islocal){
+		// 	frm.call('vehicle_maintenance_notifcation')
+		// }
 	},
 	before_workflow_action: function(frm){
 		frm.call('vehicle_maintenance_notifcation');

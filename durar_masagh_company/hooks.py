@@ -90,7 +90,7 @@ doctype_js = {
 # Override standard doctype classes
 
 override_doctype_class = {
-	"Vehicle": "durar_masagh_company.overrides.vehicle.CustomVehicle"
+	"Vehicle": "durar_masagh_company.durar_masagh_company.overrides.vehicle.CustomVehicle"
 }
 
 # Document Events
@@ -109,11 +109,12 @@ override_doctype_class = {
 # ---------------
 
 scheduler_events = {
-	# "all": [
-	# 	"durar_masagh_company.tasks.all"
-	# ],
+	"all": [
+		"durar_masagh_company.durar_masagh_company.schedule_job.vehicle_arabitra_logs.get_arabitra_data"
+	],
 	"daily": [
 		"durar_masagh_company.durar_masagh_company.schedule_job.vehicle.regulatory_compliance_checking"
+		"durar_masagh_company.durar_masagh_company.schedule_job.vehicle_arabitra_logs.update_vehicle_logs_and_location"
 	],
 	# "hourly": [
 	# 	"durar_masagh_company.tasks.hourly"
@@ -124,11 +125,11 @@ scheduler_events = {
 	# "monthly": [
 	# 	"durar_masagh_company.tasks.monthly"
 	# ]
-    "cron": {
-        "*/20 8-21 * * *": [
-            "durar_masagh_company.durar_masagh_company.schedule_job.vehicle_arabitra_logs.get_arabitra_data"
-        ]
-    },
+    # "cron": {
+    #     "*/20 8-21 * * *": [
+    #         "durar_masagh_company.durar_masagh_company.schedule_job.vehicle_arabitra_logs.get_arabitra_data"
+    #     ]
+    # },
 }
 
 # Testing

@@ -5,18 +5,9 @@ import frappe
 from frappe.model.document import Document
 from frappe.utils import validate_email_address
 from frappe.utils.data import get_datetime
-from durar_masagh_company.durar_masagh_company.schedule_job.vehicle_arabitra_logs import get_arabitra_data
-
 
 class VehicleMaintenanceSchedule(Document):
-
-	def before_save(self):
-		# get_arabitra_data()
-		pass
-
-	def before_submit(self):
-		c = 1
-
+		
 	def submit(self):
 		if self.docstatus == 0:
 			self.docstatus = 1
@@ -25,6 +16,10 @@ class VehicleMaintenanceSchedule(Document):
 		if self.carbon_check or self.vehicle_passing or self.insurance_renewal:
 			self.update_vehicle_regulatory_data()
 		self.save()
+	
+	def after_insert(self):
+		if self.docstatus == 0:
+			self.vehicle_maintenance_notifcation()
 
 	def insurance_date_checking(self):
 		if self.insurance_renewal:

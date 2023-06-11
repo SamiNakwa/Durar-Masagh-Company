@@ -21,14 +21,20 @@
   "regulatory_compliance_section",
   "carbon_check",
   "vehicle_passing",
+  "general_service",
+  "general_service_description",
   "column_break_a1kna",
   "insurance_renewal",
   "start_date",
   "end_date",
+  "is_tyre_changed",
   "maintenance_details_section_section",
   "maintenance_details",
   "amount_details_section",
-  "total_amount"
+  "total_amount",
+  "column_break_dy3ff",
+  "invoice_ref",
+  "amended_from"
  ],
  "fields": [
   {
@@ -128,7 +134,7 @@
    "fieldtype": "Select",
    "in_standard_filter": 1,
    "label": "Status",
-   "options": "Scheduled\nIn Maintenance\nCompleted\nCanceled",
+   "options": "Scheduled\nApproved\nIn Maintenance\nCompleted\nCanceled",
    "read_only": 1
   },
   {
@@ -170,12 +176,49 @@
    "fieldname": "end_date",
    "fieldtype": "Date",
    "label": "End Date"
+  },
+  {
+   "fieldname": "column_break_dy3ff",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "invoice_ref",
+   "fieldtype": "Attach",
+   "label": "<b style=\"color: blue;\">Invoice Ref<b></b></b>"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vehicle Maintenance Schedule",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_tyre_changed",
+   "fieldtype": "Check",
+   "label": "Is Tyre Changed?"
+  },
+  {
+   "default": "0",
+   "fieldname": "general_service",
+   "fieldtype": "Check",
+   "label": "General Service"
+  },
+  {
+   "depends_on": "eval:doc.general_service",
+   "fieldname": "general_service_description",
+   "fieldtype": "Small Text",
+   "label": "General Service Description",
+   "mandatory_depends_on": "eval:doc.general_service"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-29 04:40:01.352916",
+ "modified": "2023-06-01 20:42:19.169348",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Vehicle Maintenance Schedule",
