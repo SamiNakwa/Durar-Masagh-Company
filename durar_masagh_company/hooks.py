@@ -110,11 +110,11 @@ override_doctype_class = {
 
 scheduler_events = {
 	"all": [
-		"durar_masagh_company.durar_masagh_company.schedule_job.vehicle_arabitra_logs.get_arabitra_data"
+		"durar_masagh_company.schedule_job.vehicle_arabitra_logs.get_arabitra_data"
 	],
 	"daily": [
-		"durar_masagh_company.durar_masagh_company.schedule_job.vehicle.regulatory_compliance_checking"
-		"durar_masagh_company.durar_masagh_company.schedule_job.vehicle_arabitra_logs.update_vehicle_logs_and_location"
+		"durar_masagh_company.schedule_job.vehicle.regulatory_compliance_checking"
+		"durar_masagh_company.schedule_job.vehicle_arabitra_logs.update_vehicle_logs_and_location"
 	],
 	# "hourly": [
 	# 	"durar_masagh_company.tasks.hourly"

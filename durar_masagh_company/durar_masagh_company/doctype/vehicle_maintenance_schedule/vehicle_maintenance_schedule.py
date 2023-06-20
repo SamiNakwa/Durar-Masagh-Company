@@ -7,6 +7,7 @@ from frappe.utils import validate_email_address
 from frappe.utils.data import get_datetime
 
 class VehicleMaintenanceSchedule(Document):
+
 		
 	def submit(self):
 		if self.docstatus == 0:
