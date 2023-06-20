@@ -232,7 +232,8 @@ fixtures = [
                 "Delivery Trip",
                 "Vehicle",
                 "Vehicle Log",
-                "Location"
+                "Location",
+                "Delivery Note"
             ]
         ]
     ]},

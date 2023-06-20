@@ -89,5 +89,18 @@
   "response_html": null,
   "subject": "Vehicle Regulatory Compliance Notification",
   "use_html": 0
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
+  "modified": "2023-06-11 14:37:12.934054",
+  "name": "License Expairy Notification",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "response": null,
+  "response_html": "\n<h3 style=\"color:red\">Take Action | Expairy Alert</h3>\n\n<table style=\"border-collapse: collapse; width: 100%;\">\n  <thead>\n    <tr>\n      <th style=\"border: 2px solid black; padding: 10px;\">ID</th>\n      <th style=\"border: 2px solid black; padding: 10px;\">Name</th>\n      <th style=\"border: 2px solid black; padding: 10px;\">License Expaire In Days</th>\n      <th style=\"border: 2px solid black; padding: 10px;\">Driver Card Expaire In Days</th>\n    </tr>\n  </thead>\n  <tbody>\n     {% for driver in driver_details %}\n      <tr>\n        <td style=\"border: 2px solid black; padding: 10px;\">{{ driver.name }}</td>\n        <td style=\"border: 2px solid black; padding: 10px;\">{{ driver.full_name }}</td>\n        <td style=\"border: 2px solid black; padding: 10px;\">{{ driver.license_expairy }}</td>\n        <td style=\"border: 2px solid black; padding: 10px;\">{{ driver.card_expairy }}</td>\n      </tr>\n      {% endfor %}\n  </tbody>\n</table>\n",
+  "subject": "Driver License Expairy Notification",
+  "use_html": 1
  }
 ]
