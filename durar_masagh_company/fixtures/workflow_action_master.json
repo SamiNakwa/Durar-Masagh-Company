@@ -38,5 +38,25 @@
   "parentfield": null,
   "parenttype": null,
   "workflow_action_name": "Canceled"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2023-06-01 06:37:36.578549",
+  "name": "Cancel",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "workflow_action_name": "Cancel"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2023-06-01 06:38:11.400435",
+  "name": "Complete",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "workflow_action_name": "Complete"
  }
 ]

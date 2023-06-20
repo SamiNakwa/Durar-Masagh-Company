@@ -1,0 +1,123 @@
+{
+ "cards_label": "Fleet Management",
+ "category": "Modules",
+ "charts": [],
+ "creation": "2023-06-20 07:20:49.559290",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "icon": "",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Fleet",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle",
+   "link_to": "Vehicle",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle",
+   "link_to": "Vehicle",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Maintenance Schedule",
+   "link_to": "Vehicle Maintenance Schedule",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Location",
+   "link_to": "Location",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Logs",
+   "link_to": "Vehicle Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Log",
+   "link_to": "Vehicle Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Arabitra Logs",
+   "link_to": "Vehicle Arabitra Logs",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Integration",
+   "link_to": "Fleet Management API",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Fleet Management API",
+   "link_to": "Fleet Management API",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2023-06-20 07:33:40.093337",
+ "modified_by": "Administrator",
+ "module": "Durar Masagh Company",
+ "name": "Fleet",
+ "onboarding": "",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 1,
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Vehicle",
+   "link_to": "Vehicle",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Vehicle Maintenance Schedule",
+   "link_to": "Vehicle Maintenance Schedule",
+   "type": "DocType"
+  }
+ ],
+ "shortcuts_label": "Quick Access"
+}

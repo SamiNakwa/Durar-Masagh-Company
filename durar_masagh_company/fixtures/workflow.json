@@ -4,7 +4,7 @@
   "doctype": "Workflow",
   "document_type": "Vehicle Maintenance Schedule",
   "is_active": 1,
-  "modified": "2023-05-28 19:45:24.238979",
+  "modified": "2023-06-01 06:38:52.375254",
   "name": "Vehicle Maintenance Schedule",
   "override_status": 0,
   "parent": null,
@@ -26,7 +26,7 @@
     "update_value": "Scheduled"
    },
    {
-    "allow_edit": "Fleet User",
+    "allow_edit": "Fleet Manager",
     "doc_status": "0",
     "is_optional_state": 0,
     "message": null,
@@ -34,9 +34,9 @@
     "parent": "Vehicle Maintenance Schedule",
     "parentfield": "states",
     "parenttype": "Workflow",
-    "state": "In Maintenance",
+    "state": "Approved",
     "update_field": "status",
-    "update_value": "In Maintenance"
+    "update_value": "Approved"
    },
    {
     "allow_edit": "Fleet Manager",
@@ -67,18 +67,18 @@
   ],
   "transitions": [
    {
-    "action": "Review",
+    "action": "Approve",
     "allow_self_approval": 1,
     "allowed": "Fleet User",
     "condition": null,
-    "next_state": "In Maintenance",
+    "next_state": "Approved",
     "parent": "Vehicle Maintenance Schedule",
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "state": "Scheduled"
    },
    {
-    "action": "Approve",
+    "action": "Complete",
     "allow_self_approval": 1,
     "allowed": "Fleet Manager",
     "condition": null,
@@ -86,10 +86,10 @@
     "parent": "Vehicle Maintenance Schedule",
     "parentfield": "transitions",
     "parenttype": "Workflow",
-    "state": "In Maintenance"
+    "state": "Approved"
    },
    {
-    "action": "Reject",
+    "action": "Cancel",
     "allow_self_approval": 1,
     "allowed": "Fleet Manager",
     "condition": null,
