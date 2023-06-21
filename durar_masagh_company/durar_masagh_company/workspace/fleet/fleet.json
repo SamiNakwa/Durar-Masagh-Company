@@ -1,7 +1,12 @@
 {
  "cards_label": "Fleet Management",
  "category": "Modules",
- "charts": [],
+ "charts": [
+  {
+   "chart_name": "Vehicle Alive Details"
+  }
+ ],
+ "charts_label": "Dashboards",
  "creation": "2023-06-20 07:20:49.559290",
  "developer_mode_only": 0,
  "disable_user_customization": 0,
@@ -54,6 +59,33 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Delivery",
+   "link_to": "Delivery Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Delivery Note",
+   "link_to": "Delivery Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Deliver Trip",
+   "link_to": "Delivery Trip",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Logs",
    "link_to": "Vehicle Log",
    "link_type": "DocType",
@@ -97,7 +129,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-06-20 07:33:40.093337",
+ "modified": "2023-06-21 06:58:48.751262",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Fleet",
@@ -116,6 +148,12 @@
    "doc_view": "List",
    "label": "Vehicle Maintenance Schedule",
    "link_to": "Vehicle Maintenance Schedule",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Delivery Note",
+   "link_to": "Delivery Note",
    "type": "DocType"
   }
  ],

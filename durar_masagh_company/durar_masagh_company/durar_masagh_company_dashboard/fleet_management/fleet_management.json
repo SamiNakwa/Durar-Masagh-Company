@@ -1,0 +1,25 @@
+{
+ "cards": [
+  {
+   "card": "No Of Vehicle"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Vehicle Alive Details",
+   "width": "Half"
+  }
+ ],
+ "creation": "2023-06-21 06:33:39.981731",
+ "dashboard_name": "Fleet Management",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2023-06-21 06:55:03.992347",
+ "modified_by": "Administrator",
+ "module": "Durar Masagh Company",
+ "name": "Fleet Management",
+ "owner": "Administrator"
+}

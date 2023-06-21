@@ -41,45 +41,50 @@ def create_vehicle(vehicle_data):
         new_doc.insert()
 
 
-def update_vehicle_logs_and_location():
+def update_vehicle_logs():
     '''
     This cron triggers daily at 00:00:00 so we have to take the yesterday date data and update
     '''
-    yesterday = add_days(getdate(), -1)
-    start_date = datetime.datetime.combine(yesterday, datetime.datetime.min.time())
-    end_date = datetime.datetime.combine(yesterday, datetime.datetime.max.time())
+    try:
+        yesterday = add_days(getdate(), -1)
+        start_date = datetime.datetime.combine(yesterday, datetime.datetime.min.time())
+        end_date = datetime.datetime.combine(yesterday, datetime.datetime.max.time())
 
-    filters = {
-            "creation": ["between", [start_date, end_date]]
-        }
-    keys = ['vehicle', 'latitude', 'longitude', 'track_date_time', 'distance']
-    arabitra_logs = frappe.db.get_list(
-            'Vehicle Arabitra Logs',
-            fields=keys,
-            filters=filters,
-            as_list=True
+        filters = {
+                "creation": ["between", [start_date, end_date]]
+            }
+        keys = ['vehicle', 'latitude', 'longitude', 'track_date_time', 'distance']
+        arabitra_logs = frappe.db.get_list(
+                'Vehicle Arabitra Logs',
+                fields=keys,
+                filters=filters,
+                as_list=True
+            )
+        
+        location_data = frappe.db.get_list(
+            'Location',
+            filters={
+                'date': ['=', yesterday]
+            },
+            pluck='name'
         )
-    
-    location_data = frappe.db.get_list(
-        'Location',
-        filters={
-            'date': ['=', yesterday]
-        },
-        pluck='name'
-    )
 
-    arabitra_logs = np.array(arabitra_logs)
-    arabitra_logs_T = arabitra_logs.T
-    vehicles = arabitra_logs_T[0]
+        arabitra_logs = np.array(arabitra_logs)
+        arabitra_logs_T = arabitra_logs.T
+        vehicles = arabitra_logs_T[0]
 
-    for vehicle in list(set(vehicles)):
-        currect_vehicle_logs = arabitra_logs[vehicles==vehicle]
-        currect_vehicle_logs = [dict(zip(keys, vals)) for vals in currect_vehicle_logs]
-        if currect_vehicle_logs:
-            create_location_tracker(vehicle, yesterday, currect_vehicle_logs, location_data)
-            vehicle_logs_update(currect_vehicle_logs[0], yesterday)
-        else:
-            continue
+        for vehicle in list(set(vehicles)):
+            currect_vehicle_logs = arabitra_logs[vehicles==vehicle]
+            currect_vehicle_logs = [dict(zip(keys, vals)) for vals in currect_vehicle_logs]
+            if currect_vehicle_logs:
+                create_location_tracker(vehicle, yesterday, currect_vehicle_logs, location_data)
+                vehicle_logs_update(currect_vehicle_logs[0], yesterday)
+            else:
+                continue
+    except IndexError as ex:
+        frappe.log_error(str(frappe.get_traceback()), "Vehicle Update Daily Task - Insuficient Data")
+    except Exception:
+        frappe.log_error(str(frappe.get_traceback()), "Vehicle Logs Update - Critical Error")
 
 def create_location_tracker(vehicle, yesterday, currect_vehicle_logs, location_data):
     try:
