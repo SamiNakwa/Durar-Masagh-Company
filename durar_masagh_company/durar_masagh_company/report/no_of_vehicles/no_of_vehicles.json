@@ -1,0 +1,47 @@
+{
+ "add_total_row": 0,
+ "columns": [
+  {
+   "fieldname": "name",
+   "fieldtype": "Link",
+   "label": "Name",
+   "options": "Vehicle",
+   "width": 0
+  },
+  {
+   "fieldname": "make",
+   "fieldtype": "Data",
+   "label": "Make",
+   "width": 0
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model",
+   "width": 0
+  }
+ ],
+ "creation": "2023-06-21 06:46:21.229457",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2023-06-21 06:51:33.674077",
+ "modified_by": "Administrator",
+ "module": "Durar Masagh Company",
+ "name": "No Of Vehicles",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT * FROM `tabVehicle`;\n",
+ "ref_doctype": "Vehicle",
+ "report_name": "No Of Vehicles",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Fleet Manager"
+  }
+ ]
+}

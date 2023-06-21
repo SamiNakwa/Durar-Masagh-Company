@@ -2,7 +2,10 @@ import frappe
 import datetime
 import numpy as np
 
-def license_and_driver_card_expairy_notification():
+def license_expairy_notification():
+    '''
+    License and Driver card poth expairy checking here
+    '''
 
     # fields = ['expiry_date', 'driver_card_date', 'name', 'full_name', 'license_number', 'issuing_date']
 
