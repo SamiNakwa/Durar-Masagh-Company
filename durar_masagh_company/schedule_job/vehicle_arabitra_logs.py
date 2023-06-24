@@ -27,19 +27,25 @@ def get_arabitra_data():
                 new_doc.expiry_date = data.get('expiryDate')
                 new_doc.weight = data.get('weight')
                 new_doc.speed = float(data.get('speed'))
-                new_doc.insert()
+                try:
+                    new_doc.insert()
+                except Exception as ex:
+                    frappe.log_error(str(ex), 'Arabitra API Vehicle Not Found')
+                    create_vehicle(data)
+
     except Exception as ex:
         frappe.log_error(message=str(ex), title="Arabitra API schedule job")
 
-def create_vehicle(vehicle_data):
-    for data in vehicle_data:
-        new_doc = frappe.new_doc("Vehicle")
-        new_doc.license_plate = data.get('vehicleNo')
-        new_doc.make = "TATA"
-        new_doc.model = "Dost+"
-        new_doc.last_odometer = int(eval(data.get('distance')))
-        new_doc.uom = "Litre"
-        new_doc.insert()
+def create_vehicle(data):
+    new_doc = frappe.new_doc("Vehicle")
+    new_doc.license_plate = data.get('vehicleNo')
+    new_doc.make = "TATA"
+    new_doc.model = "Dost+"
+    new_doc.last_odometer = float(data.get('distance'))
+    new_doc.uom = "Litre"
+    new_doc.tyre_durability = 2000
+
+    new_doc.insert()
 
 
 def update_vehicle_logs():
