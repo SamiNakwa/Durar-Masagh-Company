@@ -11,6 +11,7 @@
   "latitude",
   "longitude",
   "track_date_time",
+  "speed",
   "column_break_zsvkh",
   "location",
   "ignition",
@@ -24,12 +25,14 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Vehicle",
-   "options": "Vehicle"
+   "options": "Vehicle",
+   "read_only": 1
   },
   {
    "fieldname": "latitude",
    "fieldtype": "Data",
-   "label": "Latitude"
+   "label": "Latitude",
+   "read_only": 1
   },
   {
    "fieldname": "longitude",
@@ -39,7 +42,8 @@
   {
    "fieldname": "track_date_time",
    "fieldtype": "Datetime",
-   "label": "Track Date Time"
+   "label": "Track Date Time",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_zsvkh",
@@ -48,35 +52,47 @@
   {
    "fieldname": "location",
    "fieldtype": "Small Text",
-   "label": "Location"
+   "label": "Location",
+   "read_only": 1
   },
   {
    "default": "0",
    "fieldname": "ignition",
    "fieldtype": "Check",
    "in_list_view": 1,
-   "label": "Ignition"
+   "label": "Ignition",
+   "read_only": 1
   },
   {
    "fieldname": "distance",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Distance"
+   "label": "Distance",
+   "read_only": 1
   },
   {
    "fieldname": "expiry_date",
    "fieldtype": "Date",
-   "label": "Expiry Date"
+   "label": "Expiry Date",
+   "read_only": 1
   },
   {
    "fieldname": "weight",
    "fieldtype": "Int",
-   "label": "Weight"
+   "label": "Weight",
+   "read_only": 1
+  },
+  {
+   "fieldname": "speed",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Speed",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-28 21:56:32.271720",
+ "modified": "2023-06-24 13:23:52.051564",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Vehicle Arabitra Logs",

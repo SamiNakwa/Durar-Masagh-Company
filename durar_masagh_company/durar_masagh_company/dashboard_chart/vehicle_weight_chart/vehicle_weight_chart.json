@@ -1,0 +1,33 @@
+{
+ "chart_name": "Vehicle Weight Chart",
+ "chart_type": "Report",
+ "creation": "2023-06-24 13:16:06.465506",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{\"ignition\":\"Yes\"}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2023-06-24 13:17:49.654618",
+ "modified_by": "Administrator",
+ "module": "Durar Masagh Company",
+ "name": "Vehicle Weight Chart",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Vehicle Current Status",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "x_field": "vehicle",
+ "y_axis": [
+  {
+   "color": "#761ACB",
+   "y_field": "weight"
+  }
+ ]
+}
