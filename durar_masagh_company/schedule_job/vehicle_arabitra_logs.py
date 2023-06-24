@@ -26,6 +26,7 @@ def get_arabitra_data():
                 new_doc.distance = float(data.get('distance'))
                 new_doc.expiry_date = data.get('expiryDate')
                 new_doc.weight = data.get('weight')
+                new_doc.speed = float(data.get('speed'))
                 new_doc.insert()
     except Exception as ex:
         frappe.log_error(message=str(ex), title="Arabitra API schedule job")

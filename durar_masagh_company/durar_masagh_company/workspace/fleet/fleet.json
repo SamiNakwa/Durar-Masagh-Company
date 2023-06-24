@@ -3,7 +3,7 @@
  "category": "Modules",
  "charts": [
   {
-   "chart_name": "Vehicle Alive Details"
+   "chart_name": "Vehicle Speed Chart"
   }
  ],
  "charts_label": "Dashboards",
@@ -127,9 +127,27 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Report",
+   "link_to": "Vehicle Arabitra Logs",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Current Status",
+   "link_to": "Vehicle Current Status",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-06-21 06:58:48.751262",
+ "modified": "2023-06-24 13:30:19.596120",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Fleet",
