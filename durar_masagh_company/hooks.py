@@ -33,6 +33,7 @@ app_license = "MIT"
 # include js in doctype views
 doctype_js = {
         "Vehicle" : "public/js/vehicle.js",
+        "Delivery Note" : "public/js/delivery_note.js",
     }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -234,12 +235,14 @@ fixtures = [
                 "Vehicle",
                 "Vehicle Log",
                 "Location",
-                "Delivery Note"
+                "Delivery Note",
+                "Delivery Note Item"
             ]
         ]
     ]},
     "Workflow State",
     "Workflow Action Master",
     "Email Template",
-    "Custom DocPerm"
+    "Custom DocPerm",
+    
 ]

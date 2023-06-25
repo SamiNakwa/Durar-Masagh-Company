@@ -34,6 +34,12 @@
   "total_amount",
   "column_break_dy3ff",
   "invoice_ref",
+  "signature_section",
+  "raised_by",
+  "column_break_hxypp",
+  "approved_by",
+  "column_break_xeo5w",
+  "ceo",
   "amended_from"
  ],
  "fields": [
@@ -187,15 +193,6 @@
    "label": "<b style=\"color: blue;\">Invoice Ref<b></b></b>"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Vehicle Maintenance Schedule",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
    "default": "0",
    "fieldname": "is_tyre_changed",
    "fieldtype": "Check",
@@ -213,12 +210,50 @@
    "fieldtype": "Small Text",
    "label": "General Service Description",
    "mandatory_depends_on": "eval:doc.general_service"
+  },
+  {
+   "fieldname": "signature_section",
+   "fieldtype": "Section Break",
+   "label": "Signature"
+  },
+  {
+   "description": "Raised By",
+   "fieldname": "raised_by",
+   "fieldtype": "Signature",
+   "label": "Raised By"
+  },
+  {
+   "fieldname": "column_break_hxypp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Signature",
+   "label": "Approved By"
+  },
+  {
+   "fieldname": "column_break_xeo5w",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ceo",
+   "fieldtype": "Signature",
+   "label": "CEO"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vehicle Maintenance Schedule",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-01 20:42:19.169348",
+ "modified": "2023-06-25 12:04:31.690409",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Vehicle Maintenance Schedule",
