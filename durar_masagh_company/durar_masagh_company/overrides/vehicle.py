@@ -7,6 +7,18 @@ import json
 
 class CustomVehicle(Vehicle):
 
+    def validate(self):
+        self.tyre_dublicate_entry_validate()
+
+
+    def tyre_dublicate_entry_validate(self):
+        tyre_list = []
+        for tyre in self.tyre:
+            if tyre.tyre_position not in tyre_list:
+                tyre_list.append(tyre.tyre_position)
+            else:
+                frappe.throw('Dublicate Entry In Tyre Details')
+
     @frappe.whitelist()
     def get_arabitra_data(self):
         try:

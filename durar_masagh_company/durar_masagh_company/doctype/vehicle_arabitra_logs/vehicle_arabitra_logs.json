@@ -87,12 +87,13 @@
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Speed",
+   "precision": "2",
    "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-24 13:23:52.051564",
+ "modified": "2023-06-24 22:48:06.462504",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Vehicle Arabitra Logs",

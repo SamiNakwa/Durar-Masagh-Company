@@ -6,8 +6,8 @@ from frappe.model.document import Document
 from frappe.utils import validate_email_address
 from frappe.utils.data import get_datetime
 
-class VehicleMaintenanceSchedule(Document):
 
+class VehicleMaintenanceSchedule(Document):
 		
 	def submit(self):
 		if self.docstatus == 0:
@@ -17,6 +17,8 @@ class VehicleMaintenanceSchedule(Document):
 		if self.carbon_check or self.vehicle_passing or self.insurance_renewal:
 			self.update_vehicle_regulatory_data()
 		self.save()
+
+		self.validate_is_tyre_changed()
 	
 	def after_insert(self):
 		if self.docstatus == 0:
@@ -38,6 +40,37 @@ class VehicleMaintenanceSchedule(Document):
 			vehicle.end_date = self.end_date
 		vehicle.save()
 
+
+	def validate_is_tyre_changed(self):
+		
+		if self.is_tyre_changed:
+			pass
+	
+	
+	@frappe.whitelist()
+	def get_vehicle_details(self):
+		tyre = frappe.db.get_list('Vehicle Tyre Details',
+									filters={
+										'parent': self.vehicle,
+										'parenttype': 'Vehicle'
+									},
+									pluck='tyre_position'
+								)
+		service = frappe.get_list(
+					'Vehicle Service Type',
+					filters={
+						'is_tyre':0
+					},
+					pluck='name'
+				)
+
+		data = {
+			'tyre': tyre,
+			'service': service
+		}
+
+		return data
+
 	@frappe.whitelist()
 	def vehicle_maintenance_notifcation(self, throw_if_missing=False):
 		doc = self.as_dict()
@@ -54,3 +87,6 @@ class VehicleMaintenanceSchedule(Document):
 			)
 		except Exception as ex:
 			frappe.msgprint(f"Please contact Administrator or Check 'Email Account' settings \n {ex}")
+
+
+		
