@@ -50,6 +50,15 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Vehicle Service Type",
+   "link_to": "Vehicle Service Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Location",
    "link_to": "Location",
    "link_type": "DocType",
@@ -147,7 +156,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-06-24 13:30:19.596120",
+ "modified": "2023-07-02 06:17:03.580194",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Fleet",

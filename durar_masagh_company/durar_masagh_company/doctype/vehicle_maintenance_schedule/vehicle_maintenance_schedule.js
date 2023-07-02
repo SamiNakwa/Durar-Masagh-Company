@@ -13,7 +13,7 @@ frappe.ui.form.on('Vehicle Maintenance Schedule', {
 			frm.doc.total_amount = count
 		}
 	},
-	before_workflow_action: function(frm){
+	after_workflow_action: function(frm){
 		frm.call('vehicle_maintenance_notifcation');
 	},
 	is_tyre_changed: function(frm){

@@ -9,6 +9,7 @@
  "field_order": [
   "vehicle",
   "employee",
+  "employee_name",
   "status",
   "column_break_9hvsd",
   "supplier",
@@ -36,7 +37,6 @@
   "invoice_ref",
   "signature_section",
   "raised_by",
-  "column_break_hxypp",
   "approved_by",
   "column_break_xeo5w",
   "ceo",
@@ -223,10 +223,6 @@
    "label": "Raised By"
   },
   {
-   "fieldname": "column_break_hxypp",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "approved_by",
    "fieldtype": "Signature",
    "label": "Approved By"
@@ -248,12 +244,18 @@
    "options": "Vehicle Maintenance Schedule",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-25 12:04:31.690409",
+ "modified": "2023-07-02 17:34:19.168882",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Vehicle Maintenance Schedule",
