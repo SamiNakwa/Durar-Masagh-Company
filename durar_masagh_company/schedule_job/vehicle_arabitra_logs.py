@@ -31,7 +31,7 @@ def get_arabitra_data():
                     new_doc.insert()
                 except Exception as ex:
                     frappe.log_error(str(ex), 'Arabitra API Vehicle Not Found')
-                    create_vehicle(data)
+                    # create_vehicle(data)
 
     except Exception as ex:
         frappe.log_error(message=str(ex), title="Arabitra API schedule job")
