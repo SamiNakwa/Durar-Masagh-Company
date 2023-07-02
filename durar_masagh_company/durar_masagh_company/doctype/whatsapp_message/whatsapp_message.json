@@ -13,6 +13,8 @@
   "is_standard",
   "section_break_acxs9",
   "message",
+  "section_break_jnc7b",
+  "message_type",
   "purpose"
  ],
  "fields": [
@@ -57,11 +59,23 @@
    "fieldtype": "Link",
    "label": "Reference DocType",
    "options": "DocType"
+  },
+  {
+   "fieldname": "section_break_jnc7b",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "The field name should start `wa_`  & should not contain space\n\nFor Example: -> \n'wa_waiting_message' |\n'wa_success_message' |\n'wa_failure_message'",
+   "fieldname": "message_type",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Message Type",
+   "options": "WhatsApp Message Type"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-30 07:57:38.063348",
+ "modified": "2023-07-02 16:16:48.573270",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Whatsapp Message",
