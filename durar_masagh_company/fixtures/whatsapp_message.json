@@ -1,0 +1,58 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Whatsapp Message",
+  "is_standard": 0,
+  "message": "test",
+  "modified": "2023-06-28 19:15:59.715229",
+  "name": "test 1",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "purpose": null,
+  "reference_doctype": null,
+  "whatsapp_name": "test 1"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Whatsapp Message",
+  "is_standard": 1,
+  "message": "test",
+  "modified": "2023-06-29 18:41:35.802486",
+  "name": "test",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "purpose": null,
+  "reference_doctype": null,
+  "whatsapp_name": "test"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Whatsapp Message",
+  "is_standard": 1,
+  "message": "Hello Wharehouse Manager \ud83d\udd74\ud83d\udcbc\nPlease prepare these items for more details please refer to the below link\n\n*Item name: {name}*\n\n{doc_url}",
+  "modified": "2023-07-02 04:15:29.065379",
+  "name": "Delivery Note Notification To WhareHouse Manager",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "purpose": "Sending the WhatsApp message to the Warehouse manager to prepare the items",
+  "reference_doctype": "Delivery Note",
+  "whatsapp_name": "Delivery Note Notification To WhareHouse Manager"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Whatsapp Message",
+  "is_standard": 1,
+  "message": "Hello Fleet Manager \ud83d\udd74\ud83d\udcbc\n\nWe are pleased to inform you that the delivery assigned to driver *{driver_name}* has been successfully completed. The package has been delivered to the designated recipient within the expected timeframe.\n\nDelivery Details:\n\nDriver: {driver_name}\nVehicle: {vehicle}\nID: ```{name}```\n\nFor more details click the link below\n{doc_url}",
+  "modified": "2023-07-01 22:14:23.415956",
+  "name": "Delivery Trip Driver Status Update Notification",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "purpose": "When the driver hits the 'Delivered' button this message sent to the fleet manager and fleet user",
+  "reference_doctype": "Delivery Trip",
+  "whatsapp_name": "Delivery Trip Driver Status Update Notification"
+ }
+]

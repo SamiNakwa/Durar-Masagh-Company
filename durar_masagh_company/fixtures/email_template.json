@@ -102,5 +102,18 @@
   "response_html": "\n<h3 style=\"color:red\">Take Action | Expairy Alert</h3>\n\n<table style=\"border-collapse: collapse; width: 100%;\">\n  <thead>\n    <tr>\n      <th style=\"border: 2px solid black; padding: 10px;\">ID</th>\n      <th style=\"border: 2px solid black; padding: 10px;\">Name</th>\n      <th style=\"border: 2px solid black; padding: 10px;\">License Expaire In Days</th>\n      <th style=\"border: 2px solid black; padding: 10px;\">Driver Card Expaire In Days</th>\n    </tr>\n  </thead>\n  <tbody>\n     {% for driver in driver_details %}\n      <tr>\n        <td style=\"border: 2px solid black; padding: 10px;\">{{ driver.name }}</td>\n        <td style=\"border: 2px solid black; padding: 10px;\">{{ driver.full_name }}</td>\n        <td style=\"border: 2px solid black; padding: 10px;\">{{ driver.license_expairy }}</td>\n        <td style=\"border: 2px solid black; padding: 10px;\">{{ driver.card_expairy }}</td>\n      </tr>\n      {% endfor %}\n  </tbody>\n</table>\n",
   "subject": "Driver License Expairy Notification",
   "use_html": 1
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
+  "modified": "2023-06-25 19:17:54.014506",
+  "name": "Delivery Note Submit Notification",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "response": "<div class=\"ql-editor read-mode\"><p>Hello Stock Manager,</p><p><br></p><p>A new delivery note {{name}} has been generated. Please review and take necessary action.</p><p><br></p><p>You can view the delivery note by clicking on the following link:</p><p><a href=\"{{url}}\" rel=\"noopener noreferrer\">Click Here</a></p><p><br></p><p>Thank you.</p><p><br></p><p>Best regards,</p><p>Durar Masagh</p></div>",
+  "response_html": null,
+  "subject": "Delivery Note Notification",
+  "use_html": 0
  }
 ]
