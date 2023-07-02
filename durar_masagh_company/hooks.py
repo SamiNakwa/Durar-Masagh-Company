@@ -34,6 +34,7 @@ app_license = "MIT"
 doctype_js = {
         "Vehicle" : "public/js/vehicle.js",
         "Delivery Note" : "public/js/delivery_note.js",
+        "Delivery Trip" : "public/js/delivery_trip.js",
     }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -91,7 +92,9 @@ doctype_js = {
 # Override standard doctype classes
 
 override_doctype_class = {
-	"Vehicle": "durar_masagh_company.durar_masagh_company.overrides.vehicle.CustomVehicle"
+	"Vehicle": "durar_masagh_company.durar_masagh_company.overrides.vehicle.CustomVehicle",
+	"Delivery Note": "durar_masagh_company.durar_masagh_company.overrides.delivery_note.CustomDeliveryNote",
+	"Delivery Trip": "durar_masagh_company.durar_masagh_company.overrides.delivery_trip.CustomDeliveryTrip"
 }
 
 # Document Events
@@ -207,13 +210,6 @@ fixtures = [
             ]
         ]
     ]},
-    {"dt": "Role", "filters": [
-        [
-            "name", "in", [
-                "Fleet User",
-            ]
-        ]
-    ]},
     {"dt": "Workspace", "filters": [
         [
             "name", "in", [
@@ -243,6 +239,9 @@ fixtures = [
     "Workflow State",
     "Workflow Action Master",
     "Email Template",
+    "Role",
+    "Whatsapp Message",
     "Custom DocPerm",
+    "Custom Role"
     
 ]

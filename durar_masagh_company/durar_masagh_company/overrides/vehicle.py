@@ -4,7 +4,7 @@ from frappe.utils import datetime
 from erpnext.hr.doctype.vehicle.vehicle import Vehicle
 import json
 
-
+5
 class CustomVehicle(Vehicle):
 
     def validate(self):

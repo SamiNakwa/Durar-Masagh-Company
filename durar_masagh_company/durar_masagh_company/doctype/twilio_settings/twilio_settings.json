@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-06-28 18:58:46.289976",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "account_info_section",
+  "account_sid",
+  "auth_token",
+  "column_break_k7flz",
+  "edit",
+  "is_active",
+  "whatsapp_section",
+  "whatsapp_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "account_info_section",
+   "fieldtype": "Section Break",
+   "label": "Account Info"
+  },
+  {
+   "fieldname": "account_sid",
+   "fieldtype": "Data",
+   "label": "Account SID",
+   "read_only_depends_on": "eval:!(Boolean(doc.edit))"
+  },
+  {
+   "fieldname": "auth_token",
+   "fieldtype": "Data",
+   "label": "Auth Token",
+   "read_only_depends_on": "eval:!(Boolean(doc.edit))"
+  },
+  {
+   "fieldname": "whatsapp_section",
+   "fieldtype": "Section Break",
+   "label": "Whatsapp"
+  },
+  {
+   "fieldname": "whatsapp_number",
+   "fieldtype": "Data",
+   "label": "Whatsapp Number",
+   "read_only_depends_on": "eval:!(Boolean(doc.edit))"
+  },
+  {
+   "fieldname": "column_break_k7flz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "edit",
+   "fieldtype": "Check",
+   "label": "Edit"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-06-28 19:03:50.255870",
+ "modified_by": "Administrator",
+ "module": "Durar Masagh Company",
+ "name": "Twilio Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
