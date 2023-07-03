@@ -34,11 +34,14 @@ frappe.ui.form.on("Delivery Trip", {
     set_driver_details(frm){
 
         if (Boolean(frm.doc.delivery_stops[0].delivery_note)){
-            var delivery_note = frm.doc.delivery_stops[0].delivery_note
+            if (!Boolean(frm.doc.vehicle)){
+                var delivery_note = frm.doc.delivery_stops[0].delivery_note
         
-            var delivery_note_doc = frappe.get_doc('Delivery Note', delivery_note)
+                var delivery_note_doc = frappe.get_doc('Delivery Note', delivery_note)
 
-            frm.doc.vehicle = delivery_note_doc.vehicle
+                frm.doc.vehicle = delivery_note_doc.vehicle
+            }
+            
 
         }
 
