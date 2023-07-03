@@ -7,6 +7,28 @@ from durar_masagh_company.whatsapp import send_whatsapp_message, get_only_number
 class CustomDeliveryNote(DeliveryNote):
 
     def on_submit(self):
+        self.validate_packed_qty()
+
+        # Check for Approving Authority
+        frappe.get_doc("Authorization Control").validate_approving_authority(
+            self.doctype, self.company, self.base_grand_total, self
+        )
+
+        # update delivered qty in sales order
+        self.update_prevdoc_status()
+        self.update_billing_status()
+
+        if not self.is_return:
+            self.check_credit_limit()
+        elif self.issue_credit_note:
+            self.make_return_invoice()
+        # Updating stock ledger should always be called after updating prevdoc status,
+        # because updating reserved qty in bin depends upon updated delivered qty in SO
+        self.update_stock_ledger()
+        self.make_gl_entries()
+        self.repost_future_sle_and_gle()
+        
+        # custom funtion
         # self.notify_driver_and_manager()
         self.send_message_to_wharehouse_manager()
 
