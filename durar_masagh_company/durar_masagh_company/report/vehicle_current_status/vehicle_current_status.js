@@ -14,7 +14,7 @@ frappe.query_reports["Vehicle Current Status"] = {
 			fieldname: "ignition",
 			label: __("Ignition"),
 			fieldtype: "Select",
-			options: "\nAll\nYes\nNo",
+			options: "All\nYes\nNo",
 			default: "All"
 		},
 	]
