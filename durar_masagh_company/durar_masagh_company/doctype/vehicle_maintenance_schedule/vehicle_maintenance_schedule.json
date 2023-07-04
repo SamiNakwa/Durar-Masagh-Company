@@ -22,6 +22,8 @@
   "regulatory_compliance_section",
   "carbon_check",
   "vehicle_passing",
+  "is_battery_changed",
+  "battery_warranty_date",
   "general_service",
   "general_service_description",
   "column_break_a1kna",
@@ -250,12 +252,25 @@
    "fieldname": "employee_name",
    "fieldtype": "Data",
    "label": "Employee Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_battery_changed",
+   "fieldtype": "Check",
+   "label": "is Battery Changed?"
+  },
+  {
+   "depends_on": "eval:Boolean(doc.is_battery_changed)",
+   "fieldname": "battery_warranty_date",
+   "fieldtype": "Date",
+   "label": "Battery Warranty Date",
+   "mandatory_depends_on": "eval:Boolean(doc.is_battery_changed)"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-07-02 17:34:19.168882",
+ "modified": "2023-07-04 08:40:44.750044",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Vehicle Maintenance Schedule",

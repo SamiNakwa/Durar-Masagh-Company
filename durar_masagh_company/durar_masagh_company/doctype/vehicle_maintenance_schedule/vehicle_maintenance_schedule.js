@@ -39,6 +39,8 @@ frappe.ui.form.on('Vehicle Maintenance Schedule', {
 					};
 					
 					if(!(Boolean(tyre.length))){
+						frm.doc.is_tyre_changed = null
+						frm.refresh_field('is_tyre_changed')
 						frappe.msgprint({
 							title: __('Notification'),
 							indicator: 'green',

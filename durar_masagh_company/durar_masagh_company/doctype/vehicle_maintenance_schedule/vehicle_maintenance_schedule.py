@@ -75,6 +75,11 @@ class VehicleMaintenanceSchedule(Document):
 		if self.vehicle_passing:
 			self.last_vehicle_passing = vms_date
 
+		# check Batery is Changed
+		if self.is_battery_changed:
+			vehicle_doc.battery_date = vms_date
+			vehicle_doc.battery_warranty_date = self.battery_warranty_date
+		
 		vehicle_doc.save()
 	
 	@frappe.whitelist()
