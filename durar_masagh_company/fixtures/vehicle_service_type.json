@@ -154,5 +154,17 @@
   "parentfield": null,
   "parenttype": null,
   "service": "VAT (Tax)"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Vehicle Service Type",
+  "is_tyre": 0,
+  "modified": "2023-07-04 08:03:53.443207",
+  "name": "Battery",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "service": "Battery"
  }
 ]

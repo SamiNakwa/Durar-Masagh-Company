@@ -25,7 +25,8 @@ frappe.query_reports["Vehicle Mileage Status"] = {
 			label: __("Vehicle"),
 			fieldtype: "Link",
 			options: "Vehicle",
-			reqd: 1
+			reqd: 1,
+			default:'1201 UNB'
 		},
 		{
 			fieldname: "month",
