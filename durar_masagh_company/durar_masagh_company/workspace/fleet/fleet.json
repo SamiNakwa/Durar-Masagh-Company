@@ -154,9 +154,27 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Mileage Status",
+   "link_to": "Vehicle Mileage Status",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Ideal Hours Status",
+   "link_to": "Vehicle Ideal Hours Status",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-07-02 06:17:03.580194",
+ "modified": "2023-07-09 18:43:57.614526",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Fleet",
@@ -182,6 +200,30 @@
    "label": "Delivery Note",
    "link_to": "Delivery Note",
    "type": "DocType"
+  },
+  {
+   "doc_view": "New",
+   "label": "Report --> Vehicle Current Status",
+   "link_to": "Vehicle Current Status",
+   "type": "Report"
+  },
+  {
+   "doc_view": "New",
+   "label": "Report --> Vehicle Mileage Status",
+   "link_to": "Vehicle Mileage Status",
+   "type": "Report"
+  },
+  {
+   "doc_view": "New",
+   "label": "Report --> Vehicle Ideal Hours Status",
+   "link_to": "Vehicle Ideal Hours Status",
+   "type": "Report"
+  },
+  {
+   "doc_view": "Dashboard",
+   "label": "Dashboard --> Fleet Management",
+   "link_to": "Fleet Management",
+   "type": "Dashboard"
   }
  ],
  "shortcuts_label": "Quick Access"
