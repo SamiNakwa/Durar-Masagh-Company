@@ -9,6 +9,7 @@
  "field_order": [
   "service",
   "is_tyre",
+  "is_battery",
   "description"
  ],
  "fields": [
@@ -31,11 +32,17 @@
    "fieldname": "is_tyre",
    "fieldtype": "Check",
    "label": "Is Tyre?"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_battery",
+   "fieldtype": "Check",
+   "label": "Is Battery?"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-01 07:00:37.418217",
+ "modified": "2023-07-04 07:53:57.406313",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Vehicle Service Type",

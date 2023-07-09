@@ -8,7 +8,8 @@
  "field_order": [
   "product_or_service",
   "bill_detail",
-  "amount"
+  "amount",
+  "more_info"
  ],
  "fields": [
   {
@@ -30,12 +31,17 @@
    "in_list_view": 1,
    "label": "Amount",
    "reqd": 1
+  },
+  {
+   "fieldname": "more_info",
+   "fieldtype": "Small Text",
+   "label": "More Info"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-06-25 07:10:40.714756",
+ "modified": "2023-07-04 07:51:30.847348",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Vehicle Maintenance Details",

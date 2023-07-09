@@ -2,20 +2,22 @@
 // For license information, please see license.txt
 /* eslint-disable */
 
-frappe.query_reports["Vehicle Current Status"] = {
+frappe.query_reports["Vehicle Ideal Hours Status"] = {
 	"filters": [
 		{
 			fieldname: "vehicle",
 			label: __("Vehicle"),
 			fieldtype: "Link",
-			options: "Vehicle"
+			options: "Vehicle",
+			reqd: 1
 		},
 		{
-			fieldname: "ignition",
-			label: __("Ignition"),
-			fieldtype: "Select",
-			options: "All\nYes\nNo",
-			default: "All"
+			fieldname: "date",
+			label: __("Date"),
+			fieldtype: "Date",
+			reqd: 1,
+			default: "Today"
 		},
+
 	]
 };

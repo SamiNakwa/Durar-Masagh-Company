@@ -1,7 +1,7 @@
 {
- "add_total_row": 0,
+ "add_total_row": 1,
  "columns": [],
- "creation": "2023-06-24 06:56:38.446677",
+ "creation": "2023-07-04 13:02:52.386845",
  "disable_prepared_report": 1,
  "disabled": 0,
  "docstatus": 0,
@@ -9,19 +9,16 @@
  "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2023-07-04 11:30:53.602782",
+ "modified": "2023-07-04 13:02:57.888264",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
- "name": "Vehicle Current Status",
+ "name": "Vehicle Mileage Status",
  "owner": "Administrator",
- "prepared_report": 1,
- "ref_doctype": "Vehicle Arabitra Logs",
- "report_name": "Vehicle Current Status",
+ "prepared_report": 0,
+ "ref_doctype": "Vehicle Log",
+ "report_name": "Vehicle Mileage Status",
  "report_type": "Script Report",
  "roles": [
-  {
-   "role": "System Manager"
-  },
   {
    "role": "Fleet Manager"
   },

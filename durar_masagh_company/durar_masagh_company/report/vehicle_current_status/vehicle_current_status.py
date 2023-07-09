@@ -18,7 +18,7 @@ def execute(filters=None):
 def get_columns(filters=None):
 	
 	return [
-		_("Vehicle") + ":Data:80",
+		_("Vehicle") + ":Link/Vehicle:100",
 		_("Ignition") + ":Check:50",
 		_("Speed") + ":Data:100",
 		_("Distance") + ":Int:100",
