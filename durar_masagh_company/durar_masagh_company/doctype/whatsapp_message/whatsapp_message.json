@@ -11,6 +11,7 @@
   "reference_doctype",
   "column_break_iypmg",
   "is_standard",
+  "is_whatsapp_template",
   "section_break_acxs9",
   "message",
   "section_break_jnc7b",
@@ -24,6 +25,7 @@
    "fieldtype": "Text",
    "in_list_view": 1,
    "label": "Message",
+   "read_only_depends_on": "eval:Boolean(doc.is_whatsapp_template)",
    "reqd": 1
   },
   {
@@ -71,11 +73,17 @@
    "hidden": 1,
    "label": "Message Type",
    "options": "WhatsApp Message Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_whatsapp_template",
+   "fieldtype": "Check",
+   "label": "Is Whatsapp Template"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-07-02 16:16:48.573270",
+ "modified": "2023-07-17 20:40:51.112793",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Whatsapp Message",

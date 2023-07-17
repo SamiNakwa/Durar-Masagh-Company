@@ -2,9 +2,10 @@
 # For license information, please see license.txt
 
 # import frappe
+
 import frappe
 from frappe import _
-from datetime import datetime
+from datetime import datetime, time
 
 def execute(filters=None):
 	columns, data = get_columns(filters=filters), get_datas(filters=filters)
@@ -20,10 +21,9 @@ def get_columns(filters=None):
 
 
 def get_datas(filters=None):
+	st = str(time.min)
+	et = str(time.max)
 
-	st = "00:00:00"
-	et = "11:59:59"
-	
 	start_time = str(filters.date) + " "+ st
 	end_time = str(filters.date) + " " + et
 
@@ -32,11 +32,13 @@ def get_datas(filters=None):
 		'track_date_time': ['between', [start_time, end_time]]
 	}
 
-	Vehicle_ideal_hours = frappe.db.get_list('Vehicle Arabitra Logs', filters=query_filters, fields=['track_date_time', 'distance', 'ignition'], order_by='track_date_time asc')
-		
+	Vehicle_ideal_hours = frappe.db.get_list('Vehicle Arabitra Logs', filters=query_filters, fields=['track_date_time', 'distance', 'ignition'], order_by='track_date_time asc') 
 	return get_vehicle_data(Vehicle_ideal_hours)
 
-	
+
+
+
+
 def get_vehicle_data(vehicle_log):
 
 	data = []
@@ -51,9 +53,7 @@ def get_vehicle_data(vehicle_log):
 		temp.append(milage_difference)
 		temp.append(current_log.get('ignition'))
 
-		data.append(temp)
-
-
+		data.append(temp) 
 	return data
 
 
