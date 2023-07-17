@@ -32,6 +32,6 @@ def send_whatsapp_message(to:list=None, body:str='No Message', media_url=values.
         frappe.log_error(str(ex), "Whatsapp error")
 
 
-def get_only_number(numbers):
+def get_only_number(numbers:list):
     
     return [num for num in numbers if num is not None]

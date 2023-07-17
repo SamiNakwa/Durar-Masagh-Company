@@ -130,11 +130,11 @@ scheduler_events = {
 	# "monthly": [
 	# 	"durar_masagh_company.tasks.monthly"
 	# ]
-    # "cron": {
-    #     "*/20 8-21 * * *": [
-    #         "durar_masagh_company.durar_masagh_company.schedule_job.vehicle_arabitra_logs.get_arabitra_data"
-    #     ]
-    # },
+    "cron": {
+        "0 6 * * *": [
+            "durar_masagh_company.schedule_job.whatsapp_message.send_good_morning_message"
+        ]
+    },
 }
 
 # Testing
