@@ -7,7 +7,8 @@ from frappe.model.document import Document
 class VehicleServiceType(Document):
 	
 	def validate(self):
-		self.check_dupliate_check_box_entry()
+		# self.check_dupliate_check_box_entry()
+		pass
 
 	
 	def check_dupliate_check_box_entry(self):
