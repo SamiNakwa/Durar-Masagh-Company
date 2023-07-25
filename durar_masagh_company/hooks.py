@@ -244,6 +244,8 @@ fixtures = [
     "Whatsapp Message",
     "Custom DocPerm",
     "Custom Role",
-    "Vehicle Service Type"
+    "Vehicle Service Type",
+    "Role Profile",
+    "Module Profile"
     
 ]

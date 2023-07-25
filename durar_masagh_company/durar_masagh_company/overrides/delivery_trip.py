@@ -17,6 +17,18 @@ class CustomDeliveryTrip(DeliveryTrip):
     def before_save(self):
         self.send_whatsapp_message_to_driver()
     
+    @frappe.whitelist()
+    def set_delivery_status(self):
+        try:
+            self.save(
+                    ignore_permissions=True, # ignore write permissions during insert
+                    ignore_version=True # do not create a version record
+                )
+            return True
+        except:
+            return False
+
+
 
     def send_whatsapp_message_to_driver(self):
         try:
@@ -32,6 +44,7 @@ class CustomDeliveryTrip(DeliveryTrip):
                     body = whatsapp_message.message.format(**doc_dict)
                     send_whatsapp_message(to=numbers, body=body)
                     frappe.msgprint('Whatsapp Notification Send To The Driver')
+                    
                 else:
                     frappe.msgprint("Employee Not Mapped To The Driver So We Can't Send Notification")
 
@@ -52,7 +65,7 @@ class CustomDeliveryTrip(DeliveryTrip):
         whatsapp_message = frappe.get_doc('Whatsapp Message', 'Delivery Trip Driver Status Update Notification')
 
         user_list = frappe.get_all("Has Role", filters={"role":("in", ['Fleet Manager'])}, pluck='parent')
-        numbers = frappe.db.get_list('User', pluck='mobile_no', filters={
+        numbers = frappe.db.get_all('User', pluck='mobile_no', filters={
                                         'name': ['in', user_list]
                                     })
         numbers = get_only_number(numbers)
