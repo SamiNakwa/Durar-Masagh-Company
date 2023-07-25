@@ -6,29 +6,79 @@ frappe.ui.form.on("Delivery Trip", {
     set_deliverd_button: function(frm){
     
         if ((frm.doc.docstatus == 0) && (!Boolean(frm.doc.__islocal))){    
-            
-            frm.add_custom_button(__("Delivered"), function() {
-                if (frappe.user.has_role('Administrator') || frappe.user.has_role('Fleet Manager') || frappe.user.has_role('Driver')){
-                    frappe.confirm('Are you sure you want to proceed? This process only for <b>Drivers</b>',
-                        () => {
-                            // action to perform if Yes is selected
-                            frm.doc.delivery_status = 'Delivered'
-                            frm.refresh_field('delivery_status')
-                            frm.remove_custom_button('Delivered');
+            if (frm.doc.delivery_status != 'Delivered'){
+                frm.add_custom_button(__("Delivered"), function() {
+                    if (frappe.user.has_role('Administrator') || frappe.user.has_role('Fleet Manager') || frappe.user.has_role('Driver')){
+                        frappe.confirm('Are you sure you want to proceed? This process only for <b>Drivers</b>',
+                            () => {
 
-                            frappe.msgprint({
-                                title: __('Notification'),
-                                indicator: 'green',
-                                message: __('Delivery Status Updated Successfully')
-                            });
+                                frm.remove_custom_button('Delivered');
+                                frm.set_value('delivery_status', 'Delivered')
+                                frm.call('set_delivery_status')
+                                    .then(r => {
+                                        if (r.message) {
+                                            frappe.msgprint({
+                                                title: __('Notification'),
+                                                indicator: 'green',
+                                                message: __('Delivery Status Updated Successfully')
+                                            });
+                                            frm.call('sent_delivery_status_update_message')
+                                        }else{
+                                            frappe.msgprint({
+                                                title: __('Error'),
+                                                indicator: 'red',
+                                                message: __('Something wrong please check with Administrator')
+                                            });
 
-                            // whatsapp message
-                            frm.call('sent_delivery_status_update_message')
-                        }, () => {
-                            // action to perform if No is selected
-                        })
-                }
-            }).css({"background-color": "green", "font-size": "15px", "color":"white"});
+                                        }
+                                        frm.refresh()
+                                    })
+
+                                // whatsapp message
+                                // frm.call('sent_delivery_status_update_message')
+                            }, () => {
+                                // action to perform if No is selected
+                            })
+                    }
+                }).css({"background-color": "green", "font-size": "15px", "color":"white"});
+            }
+            if (frm.doc.delivery_status == 'Not Delivered'){
+                frm.add_custom_button(__("Partially Delivered"), function() {
+                    if (frappe.user.has_role('Administrator') || frappe.user.has_role('Fleet Manager') || frappe.user.has_role('Driver')){
+                        frappe.confirm('Are you sure you want to proceed? This process only for <b>Drivers</b>',
+                            () => {
+
+                                frm.remove_custom_button('Partially Delivered');
+                                frm.set_value('delivery_status', 'Partially Delivered')
+                                frm.call('set_delivery_status')
+                                    .then(r => {
+                                        if (r.message) {
+                                            frappe.msgprint({
+                                                title: __('Notification'),
+                                                indicator: 'green',
+                                                message: __('Delivery Status Updated Successfully')
+                                            });
+                                            frm.call('sent_delivery_status_update_message')
+                                        }else{
+                                            frappe.msgprint({
+                                                title: __('Error'),
+                                                indicator: 'red',
+                                                message: __('Something wrong please check with Administrator')
+                                            });
+
+                                        }
+                                        frm.refresh()
+                                    })
+
+                                // whatsapp message
+                                // frm.call('sent_delivery_status_update_message')
+                            }, () => {
+                                // action to perform if No is selected
+                            })
+                    }
+                }).css({"background-color": "orange", "font-size": "15px", "color":"white"});
+
+            }
         }
     },
     set_driver_details(frm){

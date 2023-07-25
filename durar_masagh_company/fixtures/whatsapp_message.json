@@ -52,9 +52,9 @@
   "doctype": "Whatsapp Message",
   "is_standard": 1,
   "is_whatsapp_template": 0,
-  "message": "Hello Fleet Manager \ud83d\udd74\ud83d\udcbc\n\nWe are pleased to inform you that the delivery assigned to driver *{driver_name}* has been successfully completed. The package has been delivered to the designated recipient within the expected timeframe.\n\nDelivery Details:\n\nDriver: {driver_name}\nVehicle: {vehicle}\nID: ```{name}```\n\nFor more details click the link below\n{doc_url}",
+  "message": "Hello Fleet Manager \ud83d\udd74\ud83d\udcbc\n\nThe package has been \ud83d\udce6*{delivery_status}*\ud83d\udce6 to the designated recipient.\n\nDelivery Details:\n\nDriver: {driver_name}\nVehicle: {vehicle}\nStatus: *{delivery_status}*\nID: ```{name}```\n\nFor more details click the link below\n{doc_url}",
   "message_type": [],
-  "modified": "2023-07-02 09:14:29.646744",
+  "modified": "2023-07-25 18:34:19.448253",
   "name": "Delivery Trip Driver Status Update Notification",
   "parent": null,
   "parentfield": null,
@@ -96,6 +96,7 @@
   "whatsapp_name": "VMS - Status Notification"
  },
  {
+  "_liked_by": "[\"Administrator\"]",
   "docstatus": 0,
   "doctype": "Whatsapp Message",
   "is_standard": 1,
