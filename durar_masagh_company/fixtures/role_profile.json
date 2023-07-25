@@ -1,0 +1,26 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2023-07-25 06:30:50.633233",
+  "name": "Driver Roles",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "role_profile": "Driver Roles",
+  "roles": [
+   {
+    "parent": "Driver Roles",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Employee"
+   },
+   {
+    "parent": "Driver Roles",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Driver"
+   }
+  ]
+ }
+]

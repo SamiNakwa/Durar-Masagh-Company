@@ -166,5 +166,17 @@
   "parentfield": null,
   "parenttype": null,
   "service": "Battery"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Vehicle Service Type",
+  "is_tyre": 0,
+  "modified": "2023-07-19 21:28:58.734999",
+  "name": "Oil change",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "service": "Oil change"
  }
 ]
