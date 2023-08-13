@@ -52,22 +52,6 @@
   "doctype": "Whatsapp Message",
   "is_standard": 1,
   "is_whatsapp_template": 0,
-  "message": "Hello Fleet Manager \ud83d\udd74\ud83d\udcbc\n\nThe package has been \ud83d\udce6*{delivery_status}*\ud83d\udce6 to the designated recipient.\n\nDelivery Details:\n\nDriver: {driver_name}\nVehicle: {vehicle}\nStatus: *{delivery_status}*\nID: ```{name}```\n\nFor more details click the link below\n{doc_url}",
-  "message_type": [],
-  "modified": "2023-07-25 18:34:19.448253",
-  "name": "Delivery Trip Driver Status Update Notification",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
-  "purpose": "When the driver hits the 'Delivered' button this message sent to the fleet manager and fleet user",
-  "reference_doctype": "Delivery Trip",
-  "whatsapp_name": "Delivery Trip Driver Status Update Notification"
- },
- {
-  "docstatus": 0,
-  "doctype": "Whatsapp Message",
-  "is_standard": 1,
-  "is_whatsapp_template": 0,
   "message": "Dear {driver_name},\n\nWe hope this message finds you well. We are pleased to inform you that a delivery has been allocated to you. Please be ready for the assigned delivery and make the necessary preparations.\n\nDelivery Details:\n\nDeparture Time: {departure_time}\nLocation: ```{location_link}```\n\nFor More details Please click the link below\n{doc_url}",
   "message_type": [],
   "modified": "2023-07-02 09:16:25.605043",
@@ -96,7 +80,6 @@
   "whatsapp_name": "VMS - Status Notification"
  },
  {
-  "_liked_by": "[\"Administrator\"]",
   "docstatus": 0,
   "doctype": "Whatsapp Message",
   "is_standard": 1,
@@ -127,5 +110,21 @@
   "purpose": null,
   "reference_doctype": null,
   "whatsapp_name": "Day Start Message"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Whatsapp Message",
+  "is_standard": 1,
+  "is_whatsapp_template": 0,
+  "message": "Hello Fleet Manager \ud83d\udd74\ud83d\udcbc\n\nThe package has been \ud83d\udce6*{delivery_status}*\ud83d\udce6 to the designated recipient.\n\nDelivery Details:\n\nDriver: {driver_name}\nVehicle: {vehicle}\nStatus: *{delivery_status}*\nID: ```{name}```\n\nFor more details click the link below\n{doc_url}",
+  "message_type": [],
+  "modified": "2023-07-25 18:34:19.448253",
+  "name": "Delivery Trip Driver Status Update Notification",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "purpose": "When the driver hits the 'Delivered' button this message sent to the fleet manager and fleet user",
+  "reference_doctype": "Delivery Trip",
+  "whatsapp_name": "Delivery Trip Driver Status Update Notification"
  }
 ]

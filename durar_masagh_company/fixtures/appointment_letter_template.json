@@ -1,0 +1,22 @@
+[
+ {
+  "closing_notes": null,
+  "docstatus": 0,
+  "doctype": "Appointment Letter Template",
+  "introduction": "Test",
+  "modified": "2023-08-13 21:01:12.259084",
+  "name": "HR-APP-LETTER-TEMP-00001",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "terms": [
+   {
+    "description": "Handle carefull",
+    "parent": "HR-APP-LETTER-TEMP-00001",
+    "parentfield": "terms",
+    "parenttype": "Appointment Letter Template",
+    "title": "Condition"
+   }
+  ]
+ }
+]

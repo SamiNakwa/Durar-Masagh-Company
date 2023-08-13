@@ -35,6 +35,7 @@ doctype_js = {
         "Vehicle" : "public/js/vehicle.js",
         "Delivery Note" : "public/js/delivery_note.js",
         "Delivery Trip" : "public/js/delivery_trip.js",
+        "Employee Checkin" : "public/js/employee_checkin.js",
     }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -94,7 +95,8 @@ doctype_js = {
 override_doctype_class = {
 	"Vehicle": "durar_masagh_company.durar_masagh_company.overrides.vehicle.CustomVehicle",
 	"Delivery Note": "durar_masagh_company.durar_masagh_company.overrides.delivery_note.CustomDeliveryNote",
-	"Delivery Trip": "durar_masagh_company.durar_masagh_company.overrides.delivery_trip.CustomDeliveryTrip"
+	"Delivery Trip": "durar_masagh_company.durar_masagh_company.overrides.delivery_trip.CustomDeliveryTrip",
+	"Employee Checkin": "durar_masagh_company.durar_masagh_company.overrides.employee_checkin.CustomEmployeeCheckin"
 }
 
 # Document Events
@@ -119,7 +121,9 @@ scheduler_events = {
 	"daily": [
 		"durar_masagh_company.schedule_job.vehicle.regulatory_compliance_checking",
 		"durar_masagh_company.schedule_job.vehicle_arabitra_logs.update_vehicle_logs",
-		"durar_masagh_company.schedule_job.driver.license_expairy_notification"
+		"durar_masagh_company.schedule_job.driver.license_expairy_notification",
+        "durar_masagh_company.schedule_job.vehicle_arabitra_logs.remove_unwanted_data"
+
 	],
 	# "hourly": [
 	# 	"durar_masagh_company.tasks.hourly"
@@ -233,7 +237,8 @@ fixtures = [
                 "Location",
                 "Delivery Note",
                 "Delivery Note Item",
-                "Asset Movement Item"
+                "Asset Movement Item",
+                "Appointment Letter"
             ]
         ]
     ]},
@@ -246,6 +251,7 @@ fixtures = [
     "Custom Role",
     "Vehicle Service Type",
     "Role Profile",
-    "Module Profile"
+    "Module Profile",
+    "Appointment Letter Template"
     
 ]

@@ -1,11 +1,12 @@
 import frappe
 import requests
-from frappe.utils import add_days, getdate
+from frappe.utils import add_days, getdate, now, get_datetime
 import time
 from frappe.utils import datetime
 import numpy as np
 from durar_masagh_company.durar_masagh_company.overrides.vehicle import get_coordinates_list
 import json
+from datetime import timedelta
 
 def get_arabitra_data():
     try:
@@ -133,3 +134,17 @@ def vehicle_logs_update(vehicle, date):
 
     except Exception as ex:
         frappe.log_error(message=str(ex), title="Vehicle logs update daily scheduler")
+
+
+def remove_unwanted_data():
+    today = getdate()
+    doc = frappe.get_doc("Fleet Management API")
+    n_date_before = get_datetime(today) - timedelta(days=doc.data_duration)
+    try:
+        frappe.db.delete('Vehicle Arabitra Logs', {
+            'track_date_time':["<", str(n_date_before)]
+        })
+    except Exception as ex:
+        frappe.log_error(message=str(ex), title="Vehicle logs - Remove Unwanted Data")
+
+   
