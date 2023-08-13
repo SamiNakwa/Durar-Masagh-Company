@@ -2,6 +2,32 @@
  {
   "docstatus": 0,
   "doctype": "Email Template",
+  "modified": "2022-02-15 19:13:49.912740",
+  "name": "lead communication",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "response": "<div class=\"ql-editor read-mode\"><p>Thank you for contacting DM Group ...............................</p><p>will get back to you soon.............................................</p></div>",
+  "response_html": null,
+  "subject": "WELCOME TO DM GROUP SALES",
+  "use_html": 0
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
+  "modified": "2022-07-20 08:48:33.837501",
+  "name": "Request For Quotation",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "response": "<div class=\"ql-editor read-mode\"><p><span style=\"color: rgb(0, 32, 96);\">Dear Sir/Ma\u2019am,</span></p><p><br></p><p><span style=\"color: rgb(0, 32, 96);\">Greetings!</span></p><p><br></p><p><span style=\"color: red;\">Note : Immediate Quotation Required</span></p><p><br></p><p><span style=\"color: rgb(0, 32, 96);\">We are intending to purchase the products to your scope. Please check our material request &amp; let us know the further information accordingly.</span></p><p><br></p><p><span style=\"color: rgb(0, 32, 96);\">Also please advise us on the below details:</span></p><p><br></p><ol><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><span style=\"color: rgb(0, 32, 96);\">Country Of Origin </span></li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><span style=\"color: rgb(0, 32, 96);\">Model Number (If Any)</span></li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><span style=\"color: rgb(0, 32, 96);\">Weight &amp; Dimensions</span></li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><span style=\"color: rgb(0, 32, 96);\">Payment Terms</span></li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><span style=\"color: rgb(0, 32, 96);\">Lead Time</span></li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><span style=\"color: rgb(0, 32, 96);\">HS Codes</span></li></ol><p><br></p></div>",
+  "response_html": null,
+  "subject": "Request For Quotation",
+  "use_html": 0
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
   "modified": "2023-05-20 08:07:51.976845",
   "name": "Leave Approval Notification",
   "parent": null,
