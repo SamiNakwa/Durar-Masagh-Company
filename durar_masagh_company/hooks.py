@@ -251,6 +251,7 @@ fixtures = [
     "Custom Role",
     "Vehicle Service Type",
     "Role Profile",
-    "Module Profile"
+    "Module Profile",
+    "Appointment Letter Template"
     
 ]
