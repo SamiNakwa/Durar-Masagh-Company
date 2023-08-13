@@ -119,7 +119,9 @@ scheduler_events = {
 	"daily": [
 		"durar_masagh_company.schedule_job.vehicle.regulatory_compliance_checking",
 		"durar_masagh_company.schedule_job.vehicle_arabitra_logs.update_vehicle_logs",
-		"durar_masagh_company.schedule_job.driver.license_expairy_notification"
+		"durar_masagh_company.schedule_job.driver.license_expairy_notification",
+        "durar_masagh_company.schedule_job.vehicle_arabitra_logs.remove_unwanted_data"
+
 	],
 	# "hourly": [
 	# 	"durar_masagh_company.tasks.hourly"

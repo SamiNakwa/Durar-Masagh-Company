@@ -8,7 +8,8 @@
  "field_order": [
   "arabitra_section",
   "arabitra_url",
-  "arabitra_method"
+  "arabitra_method",
+  "data_duration"
  ],
  "fields": [
   {
@@ -31,12 +32,17 @@
    "options": "\nGET\nPOST",
    "read_only_depends_on": "eval:Boolean(doc.arabitra_method)",
    "reqd": 1
+  },
+  {
+   "fieldname": "data_duration",
+   "fieldtype": "Int",
+   "label": "Data Duration"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-05-28 20:31:02.241480",
+ "modified": "2023-08-06 17:19:45.528636",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Fleet Management API",
