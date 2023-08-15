@@ -1,8 +1,9 @@
 frappe.ui.form.on("Employee Checkin", {
     refresh(frm){
+        user_restriction(frm);
         set_current_user(frm);
         create_checkin_and_checkout_button(frm);
-        user_restriction(frm);
+        
     }
 
 });
@@ -16,29 +17,33 @@ const create_checkin_and_checkout_button = (frm) => {
             freeze: true,
             callback: function(r) {
                 let linked_doc = r.message
-                console.log(linked_doc)
-                if(linked_doc.log_type){
-                    if(linked_doc.log_type=='IN'){
-                        var laple = '<i class="fa fa-sign-out" aria-hidden="true"></i> Check-Out'
-                        var class_name = 'btn-danger'
-                    }else if (linked_doc.log_type=='OUT'){
-                        var laple = '<i class="fa fa-check"></i> Check-In'
-                        var class_name = 'btn-primary'
-                    }
-                    frm.add_custom_button(laple, () => {
+                if(frm.doc.employee){
+                    if(linked_doc.log_type){
                         if(linked_doc.log_type=='IN'){
-                            frm.set_value('log_type', 'OUT')
-                        }else{
-                            frm.set_value('log_type', 'IN')
+                            var laple = '<i class="fa fa-sign-out" aria-hidden="true"></i> Check-Out'
+                            var class_name = 'btn-danger'
+                        }else if (linked_doc.log_type=='OUT'){
+                            var laple = '<i class="fa fa-check"></i> Check-In'
+                            var class_name = 'btn-primary'
                         }
-                        frm.save()
-                    }).addClass(class_name);
+                        frm.add_custom_button(laple, () => {
+                            if(linked_doc.log_type=='IN'){
+                                frm.set_value('log_type', 'OUT')
+                            }else{
+                                frm.set_value('log_type', 'IN')
+                            }
+                            
+                            set_current_location(frm)
+                
+                        }).addClass(class_name);
 
-                }else{
-                    frm.add_custom_button('<i class="fa fa-check"></i> Check-In', () => {
-                        frm.set_value('log_type', 'IN')
-                        frm.save()
-                    }).addClass('btn-primary');
+                    }else{
+                        frm.add_custom_button('<i class="fa fa-check"></i> Check-In', () => {
+                            set_current_location(frm)
+                            frm.set_value('log_type', 'IN')
+                        }).addClass('btn-primary');
+                    }
+
                 }
             }
         });
@@ -48,12 +53,14 @@ const create_checkin_and_checkout_button = (frm) => {
 
 
 const user_restriction = (frm) => {
-    if (!(frappe.user.has_role('HR Manager'))){
+    if (!(frappe.user.has_role('Developer'))){
         frm.disable_save();
         frm.set_df_property('employee', 'read_only', 1)
         frm.set_df_property('log_type', 'read_only', 1)
         frm.set_df_property('device_id', 'read_only', 1)
         frm.set_df_property('skip_auto_attendance', 'read_only', 1)
+        frm.set_df_property('time', 'read_only', 1)
+        frm.set_df_property('location', 'read_only', 1)
 
     }
 }
@@ -78,4 +85,19 @@ const set_current_user = (frm) => {
         }
     });
     
+}
+
+
+
+const set_current_location = (frm) =>{
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        let location_template = `{"type":"FeatureCollection","features":[{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[${longitude},${latitude}]}}]}`
+        // frm.set_value('location', location_template)
+        frm.doc.location = location_template
+        frm.refresh_field('location')
+        frm.dirty()
+        frm.save()
+    })
 }
