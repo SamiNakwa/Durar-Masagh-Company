@@ -238,7 +238,8 @@ fixtures = [
                 "Delivery Note",
                 "Delivery Note Item",
                 "Asset Movement Item",
-                "Appointment Letter"
+                "Appointment Letter",
+                "Employee Checkin"
             ]
         ]
     ]},
