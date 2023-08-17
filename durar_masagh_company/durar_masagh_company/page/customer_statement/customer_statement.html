@@ -1,0 +1,50 @@
+<div id="print-format" class="print-format">
+    <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1/frappe-charts.min.js"></script>
+
+    <div class="head-grid-container">
+        <div class="item item-1 bold">Name</div>
+        <div class="item item-2">{{data.form_field.customer}}</div>
+        <div class="item item-3 bold">Period</div>
+        <div class="item item-4">{{data.form_field.to_date}}</div>
+        <div class="item item-5">{{data.form_field.from_date}}</div>
+        <div class="item item-6 bold">Credit Days</div>
+        <div class="item item-7">{{data.no_of_days}}</div>
+        <div class="item item-8 bold">{{data.form_field.statement_head}}</div>
+        <div class="item item-9 bold">Due Date</div>
+        <div class="item item-10">12-08-2023</div>
+    </div>
+
+    <div class="invoice-table-details">
+        <table class="invoice-table">
+             <tr>
+                <th>Transaction Date</th>
+                <th>Refered By</th>
+                <th>Invoice No</th>
+                <th>Customer Reference</th>
+                <th>Invoice Amount</th>
+                <th>Paid Amount</th>
+                <th>Balance Amount</th>
+                <th>Net Overdue Days</th>
+                <th>Actual Due Date</th>
+            </tr>
+            {% for table in data.main.invoice_table %}
+                <tr>
+                    <td>{{table.transaction_date}}</td>
+                    <td>{{table.refered_by}}</td>
+                    <td>{{table.invoice_no}}</td>
+                    <td>{{table.customer_reference}}</td>
+                    <td>{{table.invoice_amount}}</td>
+                    <td>{{table.paid_amount}}</td>
+                    <td>{{table.balance_amount}}</td>
+                    <td>{{table.net_overdue_days}}</td>
+                    <td>{{table.actual_due_date}}</td>
+                </tr>
+            {% endfor %}
+
+
+        </table>
+    </div>
+    
+    <div id="pie-chart-container"></div>
+    
+</div>
