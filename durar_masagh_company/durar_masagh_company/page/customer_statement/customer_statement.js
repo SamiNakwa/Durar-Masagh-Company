@@ -40,12 +40,6 @@ let customer_field = page.add_field({
 	reqd: 1,
 });
 
-let statement_head_field = page.add_field({
-	label: 'Statement Head',
-	fieldtype: 'Data',
-	fieldname: 'statement_head',
-	reqd: 1,
-});
 
 
 // Primary Action Button

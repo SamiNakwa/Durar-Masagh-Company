@@ -36,6 +36,7 @@ doctype_js = {
         "Delivery Note" : "public/js/delivery_note.js",
         "Delivery Trip" : "public/js/delivery_trip.js",
         "Employee Checkin" : "public/js/employee_checkin.js",
+        "Interview" : "public/js/interview.js"
     }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -96,7 +97,8 @@ override_doctype_class = {
 	"Vehicle": "durar_masagh_company.durar_masagh_company.overrides.vehicle.CustomVehicle",
 	"Delivery Note": "durar_masagh_company.durar_masagh_company.overrides.delivery_note.CustomDeliveryNote",
 	"Delivery Trip": "durar_masagh_company.durar_masagh_company.overrides.delivery_trip.CustomDeliveryTrip",
-	"Employee Checkin": "durar_masagh_company.durar_masagh_company.overrides.employee_checkin.CustomEmployeeCheckin"
+	"Employee Checkin": "durar_masagh_company.durar_masagh_company.overrides.employee_checkin.CustomEmployeeCheckin",
+	"Interview": "durar_masagh_company.durar_masagh_company.overrides.interview.CustomInterview",
 }
 
 # Document Events
@@ -239,7 +241,10 @@ fixtures = [
                 "Delivery Note Item",
                 "Asset Movement Item",
                 "Appointment Letter",
-                "Employee Checkin"
+                "Employee Checkin",
+                "Interview",
+                "Employee Onboarding",
+                "Interview Detail"
             ]
         ]
     ]},
