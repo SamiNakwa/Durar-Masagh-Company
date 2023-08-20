@@ -12,7 +12,8 @@ def get_table_date(filters):
                             filters={
                                 'customer': filters.customer,
                                 'posting_date': ['between', [filters.from_date, filters.to_date]],
-                                'docstatus':1
+                                'docstatus':1,
+                                'status':['!=', 'Paid']
                             },
                             fields=['*']
                         )
