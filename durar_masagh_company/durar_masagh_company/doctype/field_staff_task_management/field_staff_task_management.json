@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "autoname": "format:FSTM-{MM}-{YY}-{####}",
+ "creation": "2023-08-20 13:33:57.498918",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "salesman",
+  "date",
+  "task_description",
+  "column_break_ybcen",
+  "customer",
+  "status",
+  "attach_image",
+  "meetaing_details_section",
+  "start_time",
+  "end_time",
+  "hours_spend",
+  "result",
+  "column_break_hljqx",
+  "meeting_agenda",
+  "location_details_section",
+  "location_text",
+  "geo_location",
+  "general_section",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "salesman",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Salesman",
+   "options": "Employee",
+   "read_only_depends_on": "eval:doc.status == 'Complete'",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "options": "\n",
+   "read_only_depends_on": "eval:doc.status == 'Complete'",
+   "reqd": 1
+  },
+  {
+   "fieldname": "task_description",
+   "fieldtype": "Link",
+   "label": "Task Description",
+   "options": "Task Detail",
+   "read_only_depends_on": "eval:doc.status == 'Complete'\n",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ybcen",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "read_only_depends_on": "eval:doc.status == 'Complete'\n",
+   "reqd": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Open\nComplete\nIncomplete\nExtended\nCancelled",
+   "read_only_depends_on": "eval:doc.status == 'Complete'"
+  },
+  {
+   "fieldname": "attach_image",
+   "fieldtype": "Attach Image",
+   "label": "Attach Image"
+  },
+  {
+   "fieldname": "meetaing_details_section",
+   "fieldtype": "Section Break",
+   "label": "Meetaing Details"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time",
+   "read_only_depends_on": "eval:doc.status == 'Complete'",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time ",
+   "read_only_depends_on": "eval:doc.status == 'Complete'",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hours_spend",
+   "fieldtype": "Duration",
+   "label": "Hours Spend",
+   "read_only_depends_on": "eval:doc.status == 'Complete'"
+  },
+  {
+   "fieldname": "result",
+   "fieldtype": "Small Text",
+   "label": "Result",
+   "read_only_depends_on": "eval:doc.status == 'Complete'"
+  },
+  {
+   "fieldname": "column_break_hljqx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "meeting_agenda",
+   "fieldtype": "Text Editor",
+   "label": "Meeting Agenda",
+   "read_only_depends_on": "eval:doc.status == 'Complete'"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "location_details_section",
+   "fieldtype": "Section Break",
+   "label": "Location Details"
+  },
+  {
+   "fieldname": "location_text",
+   "fieldtype": "Small Text",
+   "label": "Location Text",
+   "read_only_depends_on": "eval:doc.status == 'Complete'"
+  },
+  {
+   "fieldname": "geo_location",
+   "fieldtype": "Geolocation",
+   "label": "Geo Location",
+   "read_only": 1,
+   "read_only_depends_on": "eval:doc.status == 'Complete'"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General",
+   "read_only_depends_on": "eval:doc.status == 'Complete'"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-20 16:39:20.685538",
+ "modified_by": "Administrator",
+ "module": "Durar Masagh Company",
+ "name": "Field Staff Task Management",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
