@@ -220,6 +220,7 @@ fixtures = [
         [
             "name", "in", [
                 "HR",
+                "CRM"
             ]
         ]
     ]},
