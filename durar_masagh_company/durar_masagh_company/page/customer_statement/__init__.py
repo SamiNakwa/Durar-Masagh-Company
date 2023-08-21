@@ -91,3 +91,8 @@ def get_paid_amount(sales_invoice, payment_entry, pmr):
                     amount += pe.get('total')
     
     return amount
+
+
+
+
+
