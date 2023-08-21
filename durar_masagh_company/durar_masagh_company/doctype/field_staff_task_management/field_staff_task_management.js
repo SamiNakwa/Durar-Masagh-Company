@@ -33,6 +33,49 @@ frappe.ui.form.on('Field Staff Task Management', {
 });
 
 
-const my_fun = () => {
-	alert('my funtion')
+
+frappe.ui.form.on('Meeting Details', { 
+	start_time(frm, cdt, cdn) {
+		let row = locals[cdt][cdn]
+		calculate_time_duration(frm, row)
+	},
+	end_time(frm,cdt,cdn){
+		let row = locals[cdt][cdn]
+		calculate_time_duration(frm, row)
+	}
+
+});
+
+
+const calculate_time_duration = (frm, row) => {
+
+	if (row.start_time && row.end_time){
+		const durationInSeconds = calculateDurationInSeconds(row.start_time, row.end_time); 
+		row.hours_spend = durationInSeconds
+
+		frm.refresh_field('meeting_details')
+	}
+	
 }
+
+
+function timeToSeconds(time) {
+	// Split the time into hours, minutes, and seconds
+	const [hours, minutes, seconds] = time.split(':').map(Number);
+  
+	// Convert hours, minutes, and seconds to seconds
+	const totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
+  
+	return totalSeconds;
+  }
+
+function calculateDurationInSeconds(startTime, endTime) {
+	const startSeconds = timeToSeconds(startTime);
+	const endSeconds = timeToSeconds(endTime);
+	const durationInSeconds = endSeconds - startSeconds;
+  
+	return durationInSeconds;
+  }
+  
+
+

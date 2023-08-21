@@ -12,13 +12,9 @@
   "column_break_ybcen",
   "customer",
   "status",
-  "attach_image",
-  "meetaing_details_section",
-  "start_time",
-  "end_time",
-  "hours_spend",
-  "result",
-  "column_break_hljqx",
+  "section_break_ppbkz",
+  "meeting_details",
+  "section_break_wvofr",
   "meeting_agenda",
   "location_details_section",
   "location_text",
@@ -79,46 +75,6 @@
    "read_only_depends_on": "eval:doc.status == 'Complete'"
   },
   {
-   "fieldname": "attach_image",
-   "fieldtype": "Attach Image",
-   "label": "Attach Image"
-  },
-  {
-   "fieldname": "meetaing_details_section",
-   "fieldtype": "Section Break",
-   "label": "Meetaing Details"
-  },
-  {
-   "fieldname": "start_time",
-   "fieldtype": "Time",
-   "label": "Start Time",
-   "read_only_depends_on": "eval:doc.status == 'Complete'",
-   "reqd": 1
-  },
-  {
-   "fieldname": "end_time",
-   "fieldtype": "Time",
-   "label": "End Time ",
-   "read_only_depends_on": "eval:doc.status == 'Complete'",
-   "reqd": 1
-  },
-  {
-   "fieldname": "hours_spend",
-   "fieldtype": "Duration",
-   "label": "Hours Spend",
-   "read_only_depends_on": "eval:doc.status == 'Complete'"
-  },
-  {
-   "fieldname": "result",
-   "fieldtype": "Small Text",
-   "label": "Result",
-   "read_only_depends_on": "eval:doc.status == 'Complete'"
-  },
-  {
-   "fieldname": "column_break_hljqx",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "meeting_agenda",
    "fieldtype": "Text Editor",
    "label": "Meeting Agenda",
@@ -154,11 +110,25 @@
    "fieldname": "description",
    "fieldtype": "Text Editor",
    "label": "Description"
+  },
+  {
+   "fieldname": "section_break_ppbkz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "meeting_details",
+   "fieldtype": "Table",
+   "label": "Meeting Details",
+   "options": "Meeting Details"
+  },
+  {
+   "fieldname": "section_break_wvofr",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-08-20 16:39:20.685538",
+ "modified": "2023-08-21 19:45:51.532577",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Field Staff Task Management",
