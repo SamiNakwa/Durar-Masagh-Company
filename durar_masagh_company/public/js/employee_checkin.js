@@ -1,8 +1,11 @@
 frappe.ui.form.on("Employee Checkin", {
     refresh(frm){
         user_restriction(frm);
-        set_current_user(frm);
-        create_checkin_and_checkout_button(frm);
+        if(frm.is_new()){
+            set_current_user(frm);
+            create_checkin_and_checkout_button(frm);
+        }
+
         
     }
 
