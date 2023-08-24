@@ -23,12 +23,6 @@ frappe.query_reports["Employee Checkin Sheet"] = {
 			fieldtype: "Date",
 			default: 'Today',
 			reqd: 1
-		},
-		{
-			fieldname: "log_in_time",
-			label: __("Log In Time"),
-			fieldtype: "Time",
-			reqd: 1
-		},
+		}
 	]
 };
