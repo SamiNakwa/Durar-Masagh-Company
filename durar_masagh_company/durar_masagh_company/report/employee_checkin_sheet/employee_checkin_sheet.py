@@ -21,8 +21,9 @@ def get_columns(filters=None):
         _("Lunch Break") + ":Duration:100",
 	    _("Shift Start Time") + ":Time:125",
 	    _("Shift End Time") + ":Time:125",
+	    _("Hour To Work") + ":Duration:100",
         _("Working Time") + ":Duration:100",
-	    _("Over Time") + ":Duration:100",
+	    _("Over Time/Less Time") + ":Duration:150",
 	]
 
 
@@ -46,17 +47,21 @@ def get_datas(filters=None):
 
 		temp.append(key)
 
-		first_in, last_out, diff, over_time = get_in_and_out_time(value)
+		first_in, last_out, diff, = get_in_and_out_time(value)
 		
 		temp.append(first_in)
 		temp.append(last_out)
 		temp.append(60*60)
 
-		shift_start, shift_end = get_shift_time_data(value)
+		shift_start, shift_end = get_shift_time_data(value, filters.employee)
 		temp.append(shift_start)
 		temp.append(shift_end)
 
+		hour_work = get_hour_work(shift_start,shift_end)
+		temp.append(hour_work)
 		temp.append(diff)
+
+		over_time = get_over_time(diff,hour_work)
 		temp.append(over_time)
 
 		data.append(temp)
@@ -69,14 +74,8 @@ def get_in_and_out_time(value):
 	last_out = value[-1].get('time').strftime("%H:%M:%S")
 	diff = (value[-1].get('time') - value[0].get('time')).total_seconds() - (60 * 60)
 
-	if diff < 0:
-		diff = 0
 
-	over_time = 0
-	if diff > 8*(60*60):
-		over_time = diff-8*(60*60)
-
-	return first_in, last_out, diff, over_time
+	return first_in, last_out, diff,
 
 def get_structure_data(checkin_data):
 
@@ -90,18 +89,51 @@ def get_structure_data(checkin_data):
 	return data
 
 
-def get_shift_time_data(checkin_data):
+def get_shift_time_data(checkin_data, employee):
 
-	shift_start = checkin_data[0].get('shift_start')
-	shift_end = checkin_data[0].get('shift_end')
-
+	try:
+		shift_start = checkin_data[0].get('shift_start').time()
+		shift_start = timedelta(
+								hours=shift_start.hour,
+								minutes=shift_start.minute,
+								seconds=shift_start.second
+								)
+		shift_end = checkin_data[0].get('shift_end').time()
+		shift_end = timedelta(
+								hours=shift_end.hour,
+								minutes=shift_end.minute,
+								seconds=shift_end.second
+								)
+	except:
+		shift_doc = get_current_shift_details(employee)
+		if shift_doc:
+			shift_start, shift_end = shift_doc
+		else:
+			frappe.throw("There is no shift assigned for a employee")
 
 	return shift_start, shift_end
 
 
 
-
+def get_current_shift_details(employee):
 	
+	shift_type = frappe.db.get_value('Employee', employee, 'default_shift')
+	
+	if shift_type:
+		shift_doc = frappe.db.get_value('Shift Type', shift_type, ['start_time', 'end_time'])
+		return shift_doc
+	else:
+		return False
+	
+
+def get_hour_work(shift_start,shift_end):
+		hour_work = shift_end - shift_start
+		
+		return hour_work.seconds - 3600
+
+def get_over_time(diff,hour_work):
+	over_time = diff - hour_work
+	return over_time
 
 
 
