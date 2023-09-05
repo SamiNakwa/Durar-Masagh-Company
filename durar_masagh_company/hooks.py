@@ -245,7 +245,8 @@ fixtures = [
                 "Employee Checkin",
                 "Interview",
                 "Employee Onboarding",
-                "Interview Detail"
+                "Interview Detail",
+                "Sales Invoice"
             ]
         ]
     ]},
