@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:ETM-{YY}-{#####}",
+ "creation": "2023-09-05 21:49:01.301682",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_name",
+  "employee_division",
+  "date",
+  "column_break_ehmj9",
+  "status",
+  "task_category",
+  "branch",
+  "section_break_5yc4g",
+  "task_details",
+  "general_section",
+  "additional_description"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee_division",
+   "fieldtype": "Link",
+   "label": "Employee Division",
+   "options": "Department"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "column_break_ehmj9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nComplete\nIncomplete\nExtended\nCancelled"
+  },
+  {
+   "fieldname": "task_category",
+   "fieldtype": "Link",
+   "label": "Task Category",
+   "options": "Task Detail"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "task_details",
+   "fieldtype": "Table",
+   "label": "Task Details",
+   "options": "Employee Task Details"
+  },
+  {
+   "fieldname": "section_break_5yc4g",
+   "fieldtype": "Section Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "additional_description",
+   "fieldtype": "Text Editor",
+   "label": "Additional Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-09-05 23:07:37.925833",
+ "modified_by": "Administrator",
+ "module": "Durar Masagh Company",
+ "name": "Employee Task Management",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
