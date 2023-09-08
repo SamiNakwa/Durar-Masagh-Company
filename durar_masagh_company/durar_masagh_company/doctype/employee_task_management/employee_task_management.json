@@ -7,27 +7,20 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "employee_name",
+  "employee",
   "employee_division",
   "date",
   "column_break_ehmj9",
   "status",
   "task_category",
   "branch",
+  "assigned_by",
   "section_break_5yc4g",
   "task_details",
   "general_section",
   "additional_description"
  ],
  "fields": [
-  {
-   "fieldname": "employee_name",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Employee Name",
-   "options": "Employee",
-   "reqd": 1
-  },
   {
    "fieldname": "employee_division",
    "fieldtype": "Link",
@@ -81,11 +74,24 @@
    "fieldname": "additional_description",
    "fieldtype": "Text Editor",
    "label": "Additional Description"
+  },
+  {
+   "fieldname": "assigned_by",
+   "fieldtype": "Data",
+   "label": "Assigned By"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-05 23:07:37.925833",
+ "modified": "2023-09-08 19:24:11.144563",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Employee Task Management",
