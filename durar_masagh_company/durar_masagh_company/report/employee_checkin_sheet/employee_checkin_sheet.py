@@ -23,7 +23,8 @@ def get_columns(filters=None):
 	    _("Shift End Time") + ":Time:125",
 	    _("Hour To Work") + ":Duration:100",
         _("Working Time") + ":Duration:100",
-	    _("Over Time/Less Time") + ":Duration:150",
+	    _("Over Time/Less Time") + ":Duration:100",
+		_("Down Fall Time") + ":Duration:100"
 	]
 
 
@@ -47,9 +48,9 @@ def get_datas(filters=None):
 
 		temp.append(key)
 
-		first_in, last_out, diff, = get_in_and_out_time(value)
+		frist_in, last_out, diff, = get_in_and_out_time(value)
 		
-		temp.append(first_in)
+		temp.append(frist_in)
 		temp.append(last_out)
 		temp.append(60*60)
 
@@ -64,18 +65,39 @@ def get_datas(filters=None):
 		over_time = get_over_time(diff,hour_work)
 		temp.append(over_time)
 
-		data.append(temp)
+		shift_start = ensure_timedelta(shift_start)
+	
 
+		dwon_fall_time = get_down_fall_time(shift_start,shift_end,frist_in,last_out)
+		temp.append(dwon_fall_time)
+
+		data.append(temp)
 
 	return data
 
+   
+def ensure_timedelta(time_value):
+    if isinstance(time_value, str):
+        time_format = "%H:%M:%S"
+        
+        try:
+            time_value = datetime.strptime(time_value, time_format) - datetime.strptime("00:00:00", time_format)
+        except ValueError:
+            time_value = None  
+    elif isinstance(time_value, timedelta):
+        pass
+    else:
+        time_value = None
+    
+    return time_value
+
 def get_in_and_out_time(value):
-	first_in = value[0].get('time').strftime("%H:%M:%S")
+	frist_in = value[0].get('time').strftime("%H:%M:%S")
 	last_out = value[-1].get('time').strftime("%H:%M:%S")
 	diff = (value[-1].get('time') - value[0].get('time')).total_seconds() - (60 * 60)
 
 
-	return first_in, last_out, diff,
+	return frist_in, last_out, diff,
 
 def get_structure_data(checkin_data):
 
@@ -134,6 +156,26 @@ def get_hour_work(shift_start,shift_end):
 def get_over_time(diff,hour_work):
 	over_time = diff - hour_work
 	return over_time
+
+def get_down_fall_time(shift_start, shift_end, frist_in, last_out):
+	frist_in = ensure_timedelta(frist_in)
+	last_out = ensure_timedelta(last_out)
+	mg = timedelta()
+	eg = timedelta()
+
+	if shift_start < frist_in:
+		mg = frist_in - shift_start
+
+	if shift_end > last_out:
+		eg = shift_end - last_out
+
+
+	downf_fall_time = mg + eg
+	return downf_fall_time.seconds
+	
+	
+		
+
 
 
 
