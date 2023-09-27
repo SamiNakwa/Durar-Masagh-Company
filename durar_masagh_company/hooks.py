@@ -246,7 +246,11 @@ fixtures = [
                 "Interview",
                 "Employee Onboarding",
                 "Interview Detail",
-                "Sales Invoice"
+                "Sales Invoice",
+                "Employee",
+                "Shift Type"
+
+
             ]
         ]
     ]},
