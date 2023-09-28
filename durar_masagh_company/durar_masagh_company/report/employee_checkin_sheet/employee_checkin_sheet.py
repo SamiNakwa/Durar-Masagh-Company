@@ -226,12 +226,13 @@ def get_structure_data(checkin_data):
 
 
 def get_shift_time_data(checkin_data, employee,shift_type, day):
-	shift_type = shift_type[0]
-	if day == 'Saturday':
-		if shift_type.get('is_saturday_eligible'):
-			shift_start = shift_type.get('saturday_shift_start_time')
-			shift_end = shift_type.get('saturday_shift_end_time')
-			return shift_start, shift_end
+	if shift_type and shift_type[0]:
+		shift_type = shift_type[0]
+		if day == 'Saturday':
+			if shift_type.get('is_saturday_eligible'):
+				shift_start = shift_type.get('saturday_shift_start_time')
+				shift_end = shift_type.get('saturday_shift_end_time')
+				return shift_start, shift_end
 
 	  	
 	
@@ -277,7 +278,10 @@ def get_hour_work(shift_start,shift_end):
 		return hour_work.seconds - 3600
 
 def get_over_time(diff,hour_work):
-	over_time = diff - hour_work
+	#if diff is not None and hour_work is not None:
+	diff_minutes = diff 
+	hour_work_minutes = hour_work   
+	over_time = diff_minutes - hour_work_minutes
 	return over_time
 
 def get_down_fall_time(shift_start, shift_end, frist_in, last_out):
@@ -313,13 +317,15 @@ def get_dates(from_date,to_date):
 
 def get_overtime_fixed_rate(overtime_rate,over_time,is_eligible):
 	if is_eligible:
-		seconds_to_hour = over_time/3600
-		overtime_fixed_rate = overtime_rate * seconds_to_hour
-		return overtime_fixed_rate
+		hour_to_minutes = over_time/60
+		if hour_to_minutes > 15:
+			overtime_fixed_rate = overtime_rate * (hour_to_minutes/60)
+			return overtime_fixed_rate
 
 def get_deduction_rate(overtime_rate,dwon_fall_time):
 	seconds_to_hour = dwon_fall_time/3600
-	detuction = overtime_rate * seconds_to_hour
+	hour_to_minutes = seconds_to_hour	
+	detuction = overtime_rate * hour_to_minutes
 	return detuction
 
 def get_day(date):
