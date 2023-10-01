@@ -10,30 +10,108 @@ from datetime import date
 
 
 def execute(filters=None):
+
 	columns, data = get_columns(filters), get_datas(filters)
 	return columns, data
 
 
 
 def get_columns(filters=None):
-	
+
 	return [
-		_("Date") + ":Date:100",
-		_("Day") + ":Data:150",
-		_("Attendance") + ":Data:100",
-		_("Checkin Status") + ":Check:50",
-		_("First Check-In Time") + ":Time:150",
-		_("Last Check-Out Time") + ":Time:150",
-        _("Lunch Break") + ":Duration:100",
-	    _("Shift Start Time") + ":Time:125",
-	    _("Shift End Time") + ":Time:125",
-	    _("Hour To Work") + ":Duration:100",
-        _("Working Time") + ":Duration:100",
-	    _("Over Time/Less Time") + ":Duration:100",
-		_("Down Fall Time") + ":Duration:100",
-		_("Overtime Rate Calculation(SAR)") + ":Currency:150",
-		_("Deduction Rate(SAR)") + ":Currency:150"
+		{
+			"label": _("Date"),
+			"fieldname": "date",
+			"fieldtype": "Date",
+			"width": 100
+		},
+		{
+			"label": _("Day"),
+			"fieldname": "day",
+			"fieldtype": "Data",
+			"width": 100
+		},
+		{
+			"label": _("Attendance Status"),
+			"fieldname": "attendance_status",
+			"fieldtype": "Data",
+			"width": 50
+		},
+		{
+			"label": _("Checkin Status"),
+			"fieldname": "checkin_status",
+			"fieldtype": "Check",
+			"width": 50
+		},
+		{
+			"label": _("First Check-In Time"),
+			"fieldname": "first_checkin_time",
+			"fieldtype": "Data",
+			"width": 150
+		},
+		{
+			"label": _("Last Check-Out Time"),
+			"fieldname": "last_checkout_time",
+			"fieldtype": "Data",
+			"width": 150
+		},
+		{
+			"label": _("Lunch Break"),
+			"fieldname": "lunch_break",
+			"fieldtype": "Duration",
+			"width": 100
+		},
+		{
+			"label": _("Shift Start Time"),
+			"fieldname": "shift_start_time",
+			"fieldtype": "Time",
+			"width": 125
+		},
+		{
+			"label": _("Shift End Time"),
+			"fieldname": "shift_end_time",
+			"fieldtype": "Time",
+			"width": 125
+		},
+		{
+			"label": _("Hour To Work"),
+			"fieldname": "hour_to_work",
+			"fieldtype": "Duration",
+			"width": 100
+		},
+		{
+			"label": _("Working Time"),
+			"fieldname": "working_time",
+			"fieldtype": "Duration",
+			"width": 100
+		},
+		{
+			"label": _("Over Time/Less Time"),
+			"fieldname": "over_time_less_time",
+			"fieldtype": "Duration",
+			"width": 100
+		},
+		{
+			"label": _("Down Fall Time"),
+			"fieldname": "down_fall_time",
+			"fieldtype": "Duration",
+			"width": 100
+		},
+		{
+			"label": _("Overtime Rate Calculation(SAR)"),
+			"fieldname": "overtime_rate_calculation",
+			"fieldtype": "Currency",
+			"width": 150
+		},
+		{
+			"label": _("Deduction Rate(SAR)"),
+			"fieldname": "deduction_rate",
+			"fieldtype": "Currency",
+			"width": 150
+		},
+		
 	]
+	
 
 def get_datas(filters=None):
 
@@ -117,43 +195,11 @@ def get_datas(filters=None):
 
 		deduction_rate = get_deduction_rate(overtime_rate,dwon_fall_time)
 		temp.append(deduction_rate)
-
-		data.append(temp)
-	
-	return data
-
-	for key, value in structure_data.items():
-		temp = []
-
-		temp.append(key)
-
-		frist_in, last_out, diff, = get_in_and_out_time(value)
 		
-		temp.append(frist_in)
-		temp.append(last_out)
-		temp.append(60*60)
-
-		shift_start, shift_end = get_shift_time_data(value, filters.employee)
-		temp.append(shift_start)
-		temp.append(shift_end)
-
-		hour_work = get_hour_work(shift_start,shift_end)
-		temp.append(hour_work)
-		temp.append(diff)
-
-		over_time = get_over_time(diff,hour_work)
-		temp.append(over_time)
-
-		shift_start = ensure_timedelta(shift_start)
-	
-
-		dwon_fall_time = get_down_fall_time(shift_start,shift_end,frist_in,last_out)
-		temp.append(dwon_fall_time)
 
 		data.append(temp)
-
+	
 	return data
-
 
 def is_checkin_there(date, checkin_data):
 
