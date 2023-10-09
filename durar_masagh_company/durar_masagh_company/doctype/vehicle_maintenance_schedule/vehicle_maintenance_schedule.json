@@ -42,6 +42,11 @@
   "approved_by",
   "column_break_xeo5w",
   "ceo",
+  "approver_details_section",
+  "reviewed_by",
+  "reviewed_by_name",
+  "approvel_by",
+  "approved_by_name",
   "amended_from"
  ],
  "fields": [
@@ -265,12 +270,41 @@
    "fieldtype": "Date",
    "label": "Battery Warranty Date",
    "mandatory_depends_on": "eval:Boolean(doc.is_battery_changed)"
+  },
+  {
+   "fieldname": "approver_details_section",
+   "fieldtype": "Section Break",
+   "label": "Approver Details"
+  },
+  {
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Reviewed by ",
+   "options": "User"
+  },
+  {
+   "fetch_from": "reviewed_by.full_name",
+   "fieldname": "reviewed_by_name",
+   "fieldtype": "Data",
+   "label": "Reviewed By Name"
+  },
+  {
+   "fieldname": "approvel_by",
+   "fieldtype": "Link",
+   "label": "Approved by ",
+   "options": "User"
+  },
+  {
+   "fetch_from": "approvel_by.full_name",
+   "fieldname": "approved_by_name",
+   "fieldtype": "Data",
+   "label": "Approved By name "
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-07-04 08:40:44.750044",
+ "modified": "2023-10-09 20:34:52.772211",
  "modified_by": "Administrator",
  "module": "Durar Masagh Company",
  "name": "Vehicle Maintenance Schedule",
