@@ -253,6 +253,8 @@ def get_in_and_out_time(value):
 		frist_in = value[0].get('time').strftime("%H:%M:%S")
 		last_out = value[-1].get('time').strftime("%H:%M:%S")
 		diff = (value[-1].get('time') - value[0].get('time')).total_seconds() - (60 * 60)
+		if frist_in == last_out:
+			last_out = None
 	else:
 		frist_in = last_out = None
 		diff = 0
