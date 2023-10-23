@@ -5,11 +5,11 @@ frappe.ui.form.on("Employee Checkin", {
             set_current_user_and_shift(frm);
             create_checkin_and_checkout_button(frm);
         }
-
         
     }
 
 });
+
 
 
 const create_checkin_and_checkout_button = (frm) => {
@@ -30,6 +30,7 @@ const create_checkin_and_checkout_button = (frm) => {
                             var class_name = 'btn-primary'
                         }
                         frm.add_custom_button(laple, () => {
+
                             if(linked_doc.log_type=='IN'){
                                 frm.set_value('log_type', 'OUT')
                             }else{
@@ -112,3 +113,5 @@ const set_current_location = (frm) =>{
         frm.save()
     })
 }
+
+

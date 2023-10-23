@@ -151,9 +151,9 @@ scheduler_events = {
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-#	"frappe.desk.doctype.event.event.get_events": "durar_masagh_company.event.get_events"
-# }
+override_whitelisted_methods = {
+	"erpnext.hr.doctype.employee_checkin.employee_checkin.add_log_based_on_employee_field": "durar_masagh_company.durar_masagh_company.overrides.employee_checkin.add_log_based_on_employee_field"
+ }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
