@@ -43,9 +43,10 @@ frappe.ui.form.on('Employee Task Management', {
 			})
 	},
 
-	employee(frm) {
-		frm.trigger('check_is_employee_the_current_employee')
-	},
+	// employee(frm) {
+	// 	frm.trigger('check_is_employee_the_current_employee')
+	// },
+
 	check_is_employee_the_current_employee(frm) {
 		frm.call('get_current_employee')
 			.then(r => {
@@ -56,6 +57,7 @@ frappe.ui.form.on('Employee Task Management', {
 						frappe.msgprint({
 							title: __('Notification'),
 							indicator: 'orange',
+
 							message: __("You can't assign yourself")
 						});
 					}
