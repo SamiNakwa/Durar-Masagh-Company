@@ -2,7 +2,7 @@
  {
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2023-02-25 10:34:04.251473",
+  "modified": "2023-10-14 15:04:30.055512",
   "name": "Sales Assitance",
   "parent": null,
   "parentfield": null,
@@ -13,25 +13,7 @@
     "parent": "Sales Assitance",
     "parentfield": "roles",
     "parenttype": "Role Profile",
-    "role": "Employee Self Service"
-   },
-   {
-    "parent": "Sales Assitance",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Sales User"
-   },
-   {
-    "parent": "Sales Assitance",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Stock User"
-   },
-   {
-    "parent": "Sales Assitance",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Accounts User"
    }
   ]
  },
@@ -386,7 +368,7 @@
  {
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2023-04-16 13:07:50.492829",
+  "modified": "2023-09-10 12:03:19.667917",
   "name": "Sales Supervisor",
   "parent": null,
   "parentfield": null,
@@ -884,7 +866,7 @@
  {
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2023-07-25 06:30:50.633233",
+  "modified": "2023-08-07 16:09:44.729120",
   "name": "Driver Roles",
   "parent": null,
   "parentfield": null,
@@ -895,14 +877,55 @@
     "parent": "Driver Roles",
     "parentfield": "roles",
     "parenttype": "Role Profile",
-    "role": "Employee"
+    "role": "Driver"
    },
    {
     "parent": "Driver Roles",
     "parentfield": "roles",
     "parenttype": "Role Profile",
-    "role": "Driver"
+    "role": "Employee"
    }
   ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2023-08-07 16:16:30.531198",
+  "name": "Warehouse",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "role_profile": "Warehouse",
+  "roles": [
+   {
+    "parent": "Warehouse",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Driver"
+   },
+   {
+    "parent": "Warehouse",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Employee"
+   },
+   {
+    "parent": "Warehouse",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Warehouse Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2023-10-07 14:50:28.630084",
+  "name": "Sales Support",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "role_profile": "Sales Support",
+  "roles": []
  }
 ]

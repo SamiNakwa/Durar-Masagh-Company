@@ -99,7 +99,8 @@ override_doctype_class = {
 	"Delivery Trip": "durar_masagh_company.durar_masagh_company.overrides.delivery_trip.CustomDeliveryTrip",
 	"Employee Checkin": "durar_masagh_company.durar_masagh_company.overrides.employee_checkin.CustomEmployeeCheckin",
 	"Interview": "durar_masagh_company.durar_masagh_company.overrides.interview.CustomInterview",
-    "Attendance Request":"durar_masagh_company.durar_masagh_company.overrides.attendance_request.CustomAttendanceRequest"
+    "Attendance Request":"durar_masagh_company.durar_masagh_company.overrides.attendance_request.CustomAttendanceRequest",
+    "Shift Type":"durar_masagh_company.durar_masagh_company.overrides.shift_type.CustomShiftType"
 }
 
 # Document Events

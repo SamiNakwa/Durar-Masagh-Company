@@ -646,5 +646,253 @@
     "role": "Auditor"
    }
   ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2023-10-14 14:46:12.304121",
+  "name": "6bf3e13156",
+  "page": "stock-balance",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "ref_doctype": null,
+  "report": null,
+  "roles": [
+   {
+    "parent": "6bf3e13156",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Sales User"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2023-10-14 14:57:59.845533",
+  "name": "258a4750aa",
+  "page": "point-of-sale",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "ref_doctype": null,
+  "report": null,
+  "roles": [
+   {
+    "parent": "258a4750aa",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "258a4750aa",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "258a4750aa",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Sales Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2023-10-16 08:18:52.766508",
+  "name": "7250dff94e",
+  "page": null,
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "ref_doctype": "Sales Invoice",
+  "report": "Sales2k22",
+  "roles": [
+   {
+    "parent": "7250dff94e",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "7250dff94e",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "7250dff94e",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Sales Manager"
+   },
+   {
+    "parent": "7250dff94e",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Sales Master Manager"
+   },
+   {
+    "parent": "7250dff94e",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Auditor"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2023-10-16 08:19:21.647146",
+  "name": "03b0e9cb7e",
+  "page": null,
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "ref_doctype": "Quotation",
+  "report": "Quotations2022",
+  "roles": [
+   {
+    "parent": "03b0e9cb7e",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Maintenance Manager"
+   },
+   {
+    "parent": "03b0e9cb7e",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Sales Manager"
+   },
+   {
+    "parent": "03b0e9cb7e",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Maintenance User"
+   },
+   {
+    "parent": "03b0e9cb7e",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Sales Master Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2023-10-16 08:19:32.566549",
+  "name": "40727fb5f9",
+  "page": null,
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "ref_doctype": "Quotation",
+  "report": "Quotations2K23",
+  "roles": [
+   {
+    "parent": "40727fb5f9",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Maintenance User"
+   },
+   {
+    "parent": "40727fb5f9",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Maintenance Manager"
+   },
+   {
+    "parent": "40727fb5f9",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Sales Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2023-10-16 08:19:48.828610",
+  "name": "37c2f4be6e",
+  "page": null,
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "ref_doctype": "Delivery Note",
+  "report": "Delivery2K23",
+  "roles": [
+   {
+    "parent": "37c2f4be6e",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "37c2f4be6e",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "37c2f4be6e",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Stock User"
+   },
+   {
+    "parent": "37c2f4be6e",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Auditor"
+   },
+   {
+    "parent": "37c2f4be6e",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Sales Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Role",
+  "modified": "2023-10-19 07:42:18.889864",
+  "name": "33c061e40c",
+  "page": null,
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "ref_doctype": "Sales Invoice",
+  "report": "Accounts Receivable",
+  "roles": [
+   {
+    "parent": "33c061e40c",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "33c061e40c",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "33c061e40c",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Auditor"
+   },
+   {
+    "parent": "33c061e40c",
+    "parentfield": "roles",
+    "parenttype": "Custom Role",
+    "role": "Sales User"
+   }
+  ]
  }
 ]

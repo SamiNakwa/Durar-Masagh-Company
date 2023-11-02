@@ -108,6 +108,7 @@ const set_current_location = (frm) =>{
         let location_template = `{"type":"FeatureCollection","features":[{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[${longitude},${latitude}]}}]}`
         // frm.set_value('location', location_template)
         frm.doc.location = location_template
+        frm.doc.device_id = 'Field Staff'
         frm.refresh_field('location')
         frm.dirty()
         frm.save()

@@ -1,0 +1,50 @@
+{
+ "category": "Modules",
+ "charts": [],
+ "creation": "2023-11-02 19:33:38.467727",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Employee",
+ "links": [],
+ "modified": "2023-11-02 19:33:38.467727",
+ "modified_by": "info@dmgroupksa.com",
+ "module": "Durar Masagh Company",
+ "name": "Employee",
+ "owner": "info@dmgroupksa.com",
+ "pin_to_bottom": 0,
+ "pin_to_top": 1,
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Attendance",
+   "link_to": "Attendance",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Employee Checkin",
+   "link_to": "Employee Checkin",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Attendance Request",
+   "link_to": "Attendance Request",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Leave Application",
+   "link_to": "Leave Application",
+   "type": "DocType"
+  }
+ ],
+ "shortcuts_label": "Employee Shortcuts"
+}
