@@ -226,5 +226,65 @@
   "parentfield": null,
   "parenttype": null,
   "service": "Oil change"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Vehicle Service Type",
+  "is_tyre": 0,
+  "modified": "2023-08-09 16:46:11.932795",
+  "name": "Shock Absorber",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "service": "Shock Absorber"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Vehicle Service Type",
+  "is_tyre": 0,
+  "modified": "2023-08-09 16:47:41.487855",
+  "name": "Gear Box Oil",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "service": "Gear Box Oil"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Vehicle Service Type",
+  "is_tyre": 0,
+  "modified": "2023-10-07 10:26:50.243970",
+  "name": "New Tyre Changing",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "service": "New Tyre Changing"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Vehicle Service Type",
+  "is_tyre": 0,
+  "modified": "2023-10-07 10:28:24.307485",
+  "name": "Auto Electrical Services",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "service": "Auto Electrical Services"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Vehicle Service Type",
+  "is_tyre": 0,
+  "modified": "2023-10-07 10:31:30.362261",
+  "name": "Full Wash Services",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "service": "Full Wash Services"
  }
 ]
