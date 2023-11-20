@@ -170,7 +170,7 @@ def get_datas(filters=None):
 		temp.append(last_out)
 		temp.append(60*60)
 
-		shift_start, shift_end = get_shift_time_data(structure_data.get(date, []), filters.employee,shift_type,day)
+		shift_start, shift_end = get_shift_time_data(structure_data.get(date, []), filters.employee,shift_type,day,default_shift)
 		temp.append(shift_start)
 		temp.append(shift_end)
 
@@ -273,7 +273,7 @@ def get_structure_data(checkin_data):
 	return data
 
 
-def get_shift_time_data(checkin_data, employee,shift_type, day):
+def get_shift_time_data(checkin_data, employee,shift_type, day, default_shift):
 	if shift_type and shift_type[0]:
 		shift_type = shift_type[0]
 		if day == 'Saturday':
@@ -282,24 +282,22 @@ def get_shift_time_data(checkin_data, employee,shift_type, day):
 				shift_end = shift_type.get('saturday_shift_end_time')
 				return shift_start, shift_end
 
-	  	
-	
 
-	try:
-		shift_start = checkin_data[0].get('shift_start').time()
-		shift_start = timedelta(
-								hours=shift_start.hour,
-								minutes=shift_start.minute,
-								seconds=shift_start.second
-								)
-		shift_end = checkin_data[0].get('shift_end').time()
-		shift_end = timedelta(
-								hours=shift_end.hour,
-								minutes=shift_end.minute,
-								seconds=shift_end.second
-								)
-	except:
-		shift_doc = get_current_shift_details(employee)
+	# try:
+	# 	shift_start = checkin_data[0].get('shift_start').time()
+	# 	shift_start = timedelta(
+	# 							hours=shift_start.hour,
+	# 							minutes=shift_start.minute,
+	# 							seconds=shift_start.second
+	# 							)
+	# 	shift_end = checkin_data[0].get('shift_end').time()
+	# 	shift_end = timedelta(
+	# 							hours=shift_end.hour,
+	# 							minutes=shift_end.minute,
+	# 							seconds=shift_end.second
+	# 							)
+	# except:
+		shift_doc = get_current_shift_details(employee, default_shift)
 		if shift_doc:
 			shift_start, shift_end = shift_doc
 		else:
@@ -309,12 +307,12 @@ def get_shift_time_data(checkin_data, employee,shift_type, day):
 
 
 
-def get_current_shift_details(employee):
+def get_current_shift_details(employee, default_shift):
 	
-	shift_type = frappe.db.get_value('Employee', employee, 'default_shift')
+	# shift_type = frappe.db.get_value('Employee', employee, 'default_shift')
 	
-	if shift_type:
-		shift_doc = frappe.db.get_value('Shift Type', shift_type, ['start_time', 'end_time'])
+	if default_shift:
+		shift_doc = frappe.db.get_value('Shift Type', default_shift, ['start_time', 'end_time'])
 		return shift_doc
 	else:
 		return False
