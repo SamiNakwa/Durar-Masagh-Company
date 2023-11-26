@@ -16,16 +16,19 @@ frappe.ui.form.on('Employee Task Management', {
 			.then(r => {
 				if (r.message) {
 					let linked_doc = r.message;
-					if (frm.doc.employee == linked_doc.employee) {
-						frm.set_df_property('employee', 'read_only', 1)
-						frm.set_df_property('employee_division', 'read_only', 1)
-						frm.set_df_property('date', 'read_only', 1)
-						frm.set_df_property('status', 'read_only', 1)
-						frm.set_df_property('task_category', 'read_only', 1)
-						frm.set_df_property('branch', 'read_only', 1)
-						frm.set_df_property('assigned_by', 'read_only', 1)
-						frm.set_df_property('additional_description', 'read_only', 1)
-					}
+
+					if (!(frappe.user_roles.includes('Task Manager'))){
+						if (frm.doc.employee == linked_doc.employee) {
+							frm.set_df_property('employee', 'read_only', 1)
+							frm.set_df_property('employee_division', 'read_only', 1)
+							frm.set_df_property('date', 'read_only', 1)
+							frm.set_df_property('status', 'read_only', 1)
+							frm.set_df_property('task_category', 'read_only', 1)
+							frm.set_df_property('branch', 'read_only', 1)
+							frm.set_df_property('assigned_by', 'read_only', 1)
+							frm.set_df_property('additional_description', 'read_only', 1)
+						}
+				}
 				}
 			})
 		
