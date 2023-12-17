@@ -174,8 +174,8 @@
    "type": "Link"
   }
  ],
- "modified": "2023-07-09 19:07:18.355352",
- "modified_by": "Administrator",
+ "modified": "2023-12-17 21:16:44.221616",
+ "modified_by": "info@dmgroupksa.com",
  "module": "Durar Masagh Company",
  "name": "Fleet",
  "onboarding": "",
@@ -217,6 +217,12 @@
    "doc_view": "New",
    "label": "Report --> Vehicle Ideal Hours Status",
    "link_to": "Vehicle Ideal Hours Status",
+   "type": "Report"
+  },
+  {
+   "doc_view": "New",
+   "label": "Vehicle Distance",
+   "link_to": "Vehicle Distance",
    "type": "Report"
   },
   {
