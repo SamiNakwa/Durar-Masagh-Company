@@ -165,7 +165,7 @@ def get_insurance_expiry(key, current_date):
 					
 			return msg
 		else:
-			msg = f"The Insurance will Expire In {abs(days_difference)} Days"
+			msg = f"The Insurance will Expire In {days_difference} Days"
 			return msg
 	else:
 		return None
@@ -196,7 +196,7 @@ def get_carbon_check(key, current_date):
 		if days_difference > 0 and days_difference > 15:
 			return None
 		elif days_difference < 0:
-			return (f"The Carbon Expired {days_difference} Days Ago")
+			return (f"The Carbon Expired {abs(days_difference)} Days Ago")
 		else:
 			return (f"The Carbon will Expire In {days_difference} Days")
 	else:
@@ -212,7 +212,7 @@ def last_vehicle_passing(key, current_date):
 		if days_difference > 0 and days_difference > 15:
 			return None
 		elif days_difference < 0:
-			return (f"The Vehicle Passing Expired {days_difference} Days Ago")
+			return (f"The Vehicle Passing Expired {abs(days_difference)} Days Ago")
 		else:
 			return (f"The Vehicle Passing will Expire In {days_difference} Days")
 	else:
@@ -228,7 +228,7 @@ def get_oil_changeing_expiry(key, current_date):
 		if days_difference > 0 and days_difference > 15:
 			return None
 		elif days_difference < 0:
-			return (f"The Oil Expired {days_difference} Days Ago")
+			return (f"The Oil Expired {abs(days_difference)} Days Ago")
 		else:
 			return (f"The Oil will Expire In {days_difference} Days")
 	else:
