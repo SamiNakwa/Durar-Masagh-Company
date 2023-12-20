@@ -11,19 +11,31 @@ frappe.query_reports["Vehicle Distance"] = {
 		// 	options: "Vehicle",
 		// 	reqd: 1
 		// },
+		// {
+		// 	fieldname: "date",
+		// 	label: __("Date"),
+		// 	fieldtype: "Date",
+		// 	reqd: 1
+		// },
 		{
-			fieldname: "date",
-			label: __("Date"),
-			fieldtype: "Date",
+			fieldname: "branch",
+			label: __("Branch"),
+			fieldtype: "Link",
+			options: "Branch",
+			
+		},
+		{
+			fieldname: "from_datetime",
+			label: __("From Datetime"),
+			fieldtype: "Datetime",
 			reqd: 1
 		},
-		// {
-		// 	fieldname: "to_date",
-		// 	label: __("To Date"),
-		// 	fieldtype: "Date",
-		// 	default: 'Today',
-		// 	reqd: 1
-		// }
+		{
+			fieldname: "to_datetime",
+			label: __("To Datetime"),
+			fieldtype: "Datetime",
+			reqd: 1
+		}
 
 	]
 };
