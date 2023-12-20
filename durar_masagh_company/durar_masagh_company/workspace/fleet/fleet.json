@@ -172,9 +172,27 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Distance",
+   "link_to": "Vehicle Distance",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Expiry Details",
+   "link_to": "Vehicle Expiry Details",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-12-17 21:16:44.221616",
+ "modified": "2023-12-20 20:27:07.807664",
  "modified_by": "info@dmgroupksa.com",
  "module": "Durar Masagh Company",
  "name": "Fleet",
@@ -223,6 +241,12 @@
    "doc_view": "New",
    "label": "Vehicle Distance",
    "link_to": "Vehicle Distance",
+   "type": "Report"
+  },
+  {
+   "doc_view": "New",
+   "label": "Vehicle Expiry Details",
+   "link_to": "Vehicle Expiry Details",
    "type": "Report"
   },
   {
