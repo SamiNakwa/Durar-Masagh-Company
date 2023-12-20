@@ -21,7 +21,7 @@ def get_columns(filters=None):
 		_("Vehicle") + ":Link/Vehicle:100",
 		_("Ignition") + ":Check:50",
 		_("Speed") + ":Data:100",
-		_("Distance") + ":Int:100",
+		_("ODO Meter") + ":Int:100",
         _("Latitude") + ":Data:100",
         _("Longitude") + ":Data:100",
         _("Track Date Time") + ":Data:100",
