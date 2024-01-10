@@ -53,8 +53,8 @@ def get_columns(filters=None):
 			"align": "center"
 		},
 		{
-			"label": _("Carbon Check Expiry"),
-			"fieldname": "carbon_check_expiry",
+			"label": _("MVPI Date"),
+			"fieldname": "mvpi_date",
 			"fieldtype": "Date",
 			"width": 120
 		},
@@ -66,8 +66,8 @@ def get_columns(filters=None):
 			"align": "center"
 		},
 		{
-			"label": _("Last Vehicle Passing"),
-			"fieldname": "last_vehicle_passing",
+			"label": _("MVPI Date"),
+			"fieldname": "mvpi_date",
 			"fieldtype": "Date",
 			"width": 120
 		},
@@ -79,9 +79,9 @@ def get_columns(filters=None):
 			"align": "center"
 		},
 		{
-			"label": _("Oil Changeing Expiry "),
-			"fieldname": "oil_changeing_expiry",
-			"fieldtype": "Date",
+			"label": _("Oil Change KM "),
+			"fieldname": "oil_change_km",
+			"fieldtype": "data",
 			"width": 120
 		},
 		{
@@ -189,8 +189,8 @@ def get_battery_expiry_date(key, current_date):
 	
 def get_carbon_check(key, current_date):
 
-	if key.carbon_check_date:
-		carbon_ckeck = key.carbon_check_date + timedelta(days=180)
+	if key.mvpi_date:
+		carbon_ckeck = key.mvpi_date
 		days_difference = (carbon_ckeck - current_date).days
 
 		if days_difference > 0 and days_difference > 15:
@@ -205,8 +205,8 @@ def get_carbon_check(key, current_date):
 	
 def last_vehicle_passing(key, current_date):
 
-	if key.last_vehicle_passing != None:
-		last_vehicle_passing = key.last_vehicle_passing + timedelta(days=90)
+	if  key.mvpi_date != None:
+		last_vehicle_passing =  key.mvpi_date
 		days_difference = (last_vehicle_passing - current_date).days
 
 		if days_difference > 0 and days_difference > 15:
@@ -219,18 +219,17 @@ def last_vehicle_passing(key, current_date):
 		return None	
 	
 	
-def get_oil_changeing_expiry(key, current_date):
+def get_oil_changeing_expiry(key):
 
-	if key.oil_change_date != None:	
-		oil_change_date = key.oil_change_date + timedelta(days=90)
-		days_difference = (oil_change_date - current_date).days
+	if key.last_odometer != None and key.next_oil_change_km != None: 
+		odo_meter_difference = int(key.next_oil_change_km) - key.last_odometer
 
-		if days_difference > 0 and days_difference > 15:
+		if odo_meter_difference > 0 and odo_meter_difference > 501:
 			return None
-		elif days_difference < 0:
-			return (f"The Oil Expired {abs(days_difference)} Days Ago")
+		elif odo_meter_difference < 0:
+			return (f"The Oil Expired {abs(odo_meter_difference)} KM")
 		else:
-			return (f"The Oil will Expire In {days_difference} Days")
+			return (f"The Oil will Expire In {odo_meter_difference} KM")
 	else:
 		return None	
 	
@@ -259,19 +258,19 @@ def get_data(vehicle_list, current_date):
 		battery_expiry_date = get_battery_expiry_date(key, current_date)
 		temp.append(battery_expiry_date)
 
-		temp.append(key.carbon_check_date)
+		temp.append(key.mvpi_date)
 
 		carbon_check_expiry = get_carbon_check(key, current_date)
 		temp.append(carbon_check_expiry)
 
-		temp.append(key.last_vehicle_passing)
+		temp.append(key.mvpi_date)
 
 		last_vehicle = last_vehicle_passing(key, current_date)
 		temp.append(last_vehicle )
 
-		temp.append(key.oil_change_date)
+		temp.append(key.next_oil_change_km)
 
-		oil_change_date = get_oil_changeing_expiry(key, current_date)
+		oil_change_date = get_oil_changeing_expiry(key)
 		temp.append(oil_change_date)
 
 		datas.append(temp)

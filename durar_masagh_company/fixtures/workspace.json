@@ -630,6 +630,21 @@
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
+    "label": "Employee Checkin Sheet",
+    "link_to": "Employee Checkin Sheet",
+    "link_type": "Report",
+    "onboard": 0,
+    "only_for": null,
+    "parent": "HR",
+    "parentfield": "links",
+    "parenttype": "Workspace",
+    "type": "Link"
+   },
+   {
+    "dependencies": null,
+    "hidden": 0,
+    "icon": null,
+    "is_query_report": 0,
     "label": "Expense Claims",
     "link_to": null,
     "link_type": null,
@@ -1436,7 +1451,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2023-06-28 19:20:11.450213",
+  "modified": "2024-01-07 20:16:22.956803",
   "module": "HR",
   "name": "HR",
   "onboarding": "Human Resource",
@@ -1530,6 +1545,20 @@
     "restrict_to_domain": null,
     "stats_filter": "{\n    \"status\": \"Open\"\n}",
     "type": "Dashboard"
+   },
+   {
+    "color": null,
+    "doc_view": "",
+    "format": null,
+    "icon": null,
+    "label": "Employee Checkin Sheet",
+    "link_to": "Employee Checkin Sheet",
+    "parent": "HR",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": null,
+    "type": "Report"
    }
   ],
   "shortcuts_label": null
