@@ -1,6 +1,6 @@
 import frappe
-from erpnext.hr.doctype.shift_type.shift_type import ShiftType
-from erpnext.hr.doctype.employee_checkin.employee_checkin import calculate_working_hours
+from hrms.hr.doctype.shift_type.shift_type import ShiftType
+from hrms.hr.doctype.employee_checkin.employee_checkin import calculate_working_hours
 
 
 from datetime import timedelta, datetime

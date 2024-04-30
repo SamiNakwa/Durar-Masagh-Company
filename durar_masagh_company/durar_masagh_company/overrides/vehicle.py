@@ -1,7 +1,7 @@
 import frappe
 from frappe.exceptions import DoesNotExistError
 from frappe.utils import datetime
-from erpnext.hr.doctype.vehicle.vehicle import Vehicle
+from erpnext.setup.doctype.vehicle.vehicle import Vehicle
 import json
 
 class CustomVehicle(Vehicle):

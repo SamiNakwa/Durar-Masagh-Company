@@ -1,6 +1,6 @@
 
 import frappe
-from erpnext.hr.doctype.attendance_request.attendance_request import AttendanceRequest
+from hrms.hr.doctype.attendance_request.attendance_request import AttendanceRequest
 from frappe.utils import add_days, date_diff, getdate
 from datetime import datetime
 

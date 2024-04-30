@@ -1,5 +1,5 @@
 import frappe
-from erpnext.hr.doctype.employee_checkin.employee_checkin import EmployeeCheckin
+from hrms.hr.doctype.employee_checkin.employee_checkin import EmployeeCheckin
 from frappe.utils import getdate
 from datetime import datetime, timedelta
 import json

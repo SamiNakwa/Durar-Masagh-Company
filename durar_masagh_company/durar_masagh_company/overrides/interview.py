@@ -1,5 +1,5 @@
 import frappe
-from erpnext.hr.doctype.interview.interview import Interview
+from hrms.hr.doctype.interview.interview import Interview
 
 
 class CustomInterview(Interview):

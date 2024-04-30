@@ -154,7 +154,7 @@ scheduler_events = {
 # ------------------------------
 #
 override_whitelisted_methods = {
-	"erpnext.hr.doctype.employee_checkin.employee_checkin.add_log_based_on_employee_field": "durar_masagh_company.durar_masagh_company.overrides.employee_checkin.add_log_based_on_employee_field",
+	"hrms.hr.doctype.employee_checkin.employee_checkin.add_log_based_on_employee_field": "durar_masagh_company.durar_masagh_company.overrides.employee_checkin.add_log_based_on_employee_field",
     "frappe.utils.nestedset.rebuild_tree":"durar_masagh_company.durar_masagh_company.overrides.nestedset.rebuild_tree"
  }
 #
