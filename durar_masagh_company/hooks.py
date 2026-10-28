@@ -272,4 +272,12 @@ fixtures = [
 ]
 
 
- 
+# Record-level, deny-by-default access to Custom HTML Block for dashboard-only roles
+# (Driver Dashboard User -> "ESS UI - Driver" only). See custom_html_block_permissions.py.
+has_permission = {
+	"Custom HTML Block": "durar_masagh_company.custom_html_block_permissions.has_permission",
+}
+
+permission_query_conditions = {
+	"Custom HTML Block": "durar_masagh_company.custom_html_block_permissions.get_permission_query_conditions",
+}
